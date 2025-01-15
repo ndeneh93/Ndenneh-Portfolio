@@ -1,125 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Ndenneh Chubu" />
-    <title>Ndenneh Chubu's Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Portfolio.css" />
-    <link rel="icon" href="./images/favicon.ico" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-  </head>
 
-  <body>
-    <header class="bg-primary text-white py-5">
-      <div class="container">
-        <button 
-          id="theme-toggle" 
-          class="btn position-fixed top-0 end-0 m-3 theme-toggle" 
-          onclick="toggleTheme()" 
-          aria-label="Toggle dark mode"
-        >
-          <i class="fas fa-moon"></i>
-        </button>
-        <div class="profile-header text-center">
-          <img
-            src="Ndenneh.jpg"
-            alt="Ndenneh Chubu"
-            class="profile-pic img-fluid rounded-circle shadow mb-4"
-            onerror="this.onerror=null; this.src='https://via.placeholder.com/200';"
-          />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Ndenneh Chubu" />
+  <title>Ndenneh Chubu's Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Portfolio.css" />
+  <link rel="icon" href="./images/favicon.ico" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+  <header class="bg-primary text-white py-5">
+    <div class="container">
+      <button id="theme-toggle" class="btn position-fixed top-0 end-0 m-3 theme-toggle" onclick="toggleTheme()"
+        aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="profile-header text-center">
+        <img src="cboy.jpg" alt="Ndenneh Chubu" class="profile-pic img-fluid rounded-circle shadow mb-4"
+          onerror="this.onerror=null; this.src='https://via.placeholder.com/200';" />
+      </div>
+      <h1 class="display-4 text-center mb-3">Ndenneh Chubu</h1>
+      <p class="lead text-center">
+        <span class="badge bg-light text-primary me-2">Bachelor of Science in Computer Science | Baku State
+          University</span>
+        <span class="badge bg-light text-primary me-2">Bachelor of Computer Applications | Amity University</span>
+
+      </p>
+
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I am an IT Support Specialist with extensive hands-on experience in computer networks, cybersecurity, and their
+        practical applications. I am passionate about web development and possess strong problem-solving skills.
+        Additionally, I thrive on continuous learning and remain committed to staying current with the latest industry
+        trends and emerging technologies.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+
+      <div class="skills-content">
+        <div class="skill-category">
+          <h3>Technical Skills</h3>
+          <ul>
+            <li>Frontend Development (HTML, CSS, JavaScript)</li>
+            <li>IT Support and Troubleshooting</li>
+            <li>Network Administration</li>
+            <li>Data Analysis</li>
+          </ul>
         </div>
-        <h1 class="display-4 text-center mb-3">Ndenneh Chubu</h1>
-        <p class="lead text-center">
-          <span class="badge bg-light text-primary me-2">B.S in Computer Science</span>
-          <span class="badge bg-light text-primary me-2">Baku State University</span>
-        </p>
-        <p>
-          e-VBAB Scholar |
-          YALI RLC W/Africa Emerging Leaders Scholar |
-          IT Support Specialist |
-          Youth Delegate, COY19 |
-          Party Delegate, UNFCCC COP29
-        </p>
-        
+
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Project Management</li>
+            <li>Team Leadership</li>
+            <li>Problem Solving</li>
+            <li>Communication</li>
+          </ul>
+        </div>
+
+        <div class="skill-description">
+
+        </div>
+      </div>
+  </section>
+
+  <section id="certifications">
+    <div class="container">
+      <h2>Certifications</h2>
+      <div class="certification-grid">
+        <div class="certification-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Cloud Computing</h3>
+          <p>Understanding Core Concepts</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>CISCO Networking Academy</h3>
+          <p>Cybersecurity Essentials</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-award"></i>
+          <h3>YALI RLC West Africa</h3>
+          <p>Emerging Leaders Scholar</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-user-shield"></i>
+          <h3>IT Support Specialist</h3>
+          <p>Professional Certification</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-globe-africa"></i>
+          <h3>Youth Delegate</h3>
+          <p>COY19 & UNFCCC COP29</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-file-excel"></i>
+          <h3>Amity University </h3>
+          <p>Advanced Excel</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-server"></i>
+          <h3>Coursera </h3>
+          <p>System Administration</p>
+        </div>
+
+        <div class="certification-item">
+          <i class="fas fa-shield-virus"></i>
+          <h3> CISCO Networking Academy</h3>
+          <p>Cyber Threat Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="container">
+      <h2>Awards & Honors</h2>
+      <div class="awards-grid">
+        <div class="award-item">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Indian Government Scholarship</h3>
+          <p>Bachelor's degree </p>
+        </div>
+
+        <div class="award-item">
+          <i class="fas fa-users"></i>
+          <h3>YALI RLC</h3>
+          <p>Emerging Leaders Program </p>
+        </div>
+
+        <div class="award-item">
+          <i class="fas fa-leaf"></i>
+          <h3>UNFCCC Climate Conference </h3>
+          <p>COY19 & COP29</p>
+        </div>
+
+        <div class="award-item">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Azerbaijan Government Scholarship</h3>
+          <p>Bachelor's degree</p>
+        </div>
+        <div class="award-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Ingressive for Good Scholarship</h3>
+          <p>Cybersecurity </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Reearch Project</h2>
+      <div class="project">
+        <h3>Security and Privacy </h3>
+        <p>Research project focused on enhancing cybersecurity measures and privacy protocols in our day-to-day online
+          activities and implemented robust security frameworks and data protection strategies.</p>
+        <div class="project-links">
+          <a href="Amity Project.pdf" target="_blank">
+            <i class="fas fa-book-reader" ></i> Documentation
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+994507879269">+994 50 787 92 69</a>
+
+        </div>
+
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a>
+
+        </div>
         <!-- Add CV Download Section -->
         <div class="cv-section text-center mt-4">
-          <a href="./assets/cv.pdf" 
-             class="btn btn-light btn-lg" 
-             download="Ndenneh_Chubu_CV.pdf"
-             target="_blank">
+          <a href="./nde" class="btn btn-light btn-lg" download="Ndenneh_Chubu_CV.pdf" target="_blank">
             <i class="fas fa-file-download me-2"></i>
             Download CV
           </a>
+
         </div>
-
-        <nav>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
       </div>
-    </header>
+  </section>
 
-    <section id="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          Ndenneh is an IT Support Specialist with vast hands-on experience in
-          computer networks, security issues, and their applications. He has
-          developed in-depth expertise in software development and
-          problem-solving. In addition, Ndenneh has a passion for learning and
-          staying up-to-date with the latest industry trends and technologies.
-          He believes that staying curious and embracing challenges is essential
-          for personal and professional growth.
-        </p>
+  <footer>
+    <div class="container">
+      <div class="social-links mb-4">
+        <a href="https://www.linkedin.com/in/ndenneh-chubu" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.researchgate.net/Ndenneh-Chubu-2" target="_blank" class="social-icon">
+          <i class="fab fa-researchgate"></i>
+        </a>
+        <a href="https://github.com/ndeneh93" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
       </div>
-    </section>
 
-    <section id="skills">
-      <div class="container">
-        <h2>Skills</h2>
-        <ul>
-                    <li>
-                  </ul>
-                </div>
-              </section>
-          
-              <section id="projects">
-                <div class="container">
-                  <h2>Projects</h2>
-                  <!-- Add your projects here -->
-                </div>
-              </section>
-          
-              <section id="contact">
-                <div class="container">
-                  <h2>Contact</h2>
-                  <!-- Add your contact information here -->
-                </div>
-              </section>
-          
-              <footer>
-                <div class="container">
-                  <div class="social-links mb-4">
-                    <a href="https://www.linkedin.com/in/ndenneh-chubu" target="_blank" class="social-icon">
-                      <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.researchgate.net/Ndenneh-Chubu-2" target="_blank" class="social-icon">
-                      <i class="fab fa-researchgate"></i>
-                    </a>
-                  </div>
-                  <p>&copy; 2023 Ndenneh Chubu. All rights reserved.</p>
-                </div>
-              </footer>
-          
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-              <script src="./Portfolio.js"></script>
-            </body>
-          </html>
+      <p>Made with <i class="fas fa-heart heart-icon"></i> by Ndenneh Chubu</p>
+      <p>&copy; 2025 <br>All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./Portfolio.js"></script>
+</body>
+
+</html>
