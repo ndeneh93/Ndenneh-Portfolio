@@ -294,11 +294,13 @@ section h2 {
 }
 
 .project {
-    background-color: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 800px;
     transition: all 0.3s ease;
     border: 1px solid #110101;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -322,7 +324,8 @@ section h2 {
     color: #ffffff;
     font-size: 1.1rem;
     line-height: 1.8;
-    margin: 20px 0;
+    margin: 20px auto;
+    max-width: 700px;
     padding: 0 20px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
