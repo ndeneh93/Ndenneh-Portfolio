@@ -104,3 +104,7 @@ function initTheme() {
 
 // Initialize theme when page loads
 document.addEventListener('DOMContentLoaded', initTheme);
+
+function closeFooter() {
+    document.querySelector('footer').style.display = 'none';
+}
