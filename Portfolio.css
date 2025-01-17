@@ -153,30 +153,35 @@ header nav ul li:hover {
     transform: translateY(-2px);
 }
 
-/* Section Styles */
+/* General Section Styles */
 section {
-  padding: 60px 0;
-  background: var(--section-bg);
-  margin: 20px 0;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px var(--shadow-color);
+    padding: 60px 0;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 20px;
+    transition: all 0.3s ease;
 }
 
 section h2 {
-  color: #0073e6;
-  margin-bottom: 20px;
-  text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Specific Section Styles */
+#skills, #certifications, #projects, #community-service, #contact, #about {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 /* Skills Section Styling */
 #skills {
-    background-color: #000000;  /* Black background */
     padding: 60px 0;
-    color: #ffffff;  /* White text for contrast */
 }
 
 #skills h2 {
-    color: #ffffff;  /* White heading */
     margin-bottom: 30px;
     text-align: center;
 }
@@ -259,12 +264,10 @@ section h2 {
 
 /* Projects Section Styling */
 #projects {
-    background-color: #000000;
     padding: 60px 0;
 }
 
 #projects h2 {
-    color: #ffffff;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -293,6 +296,7 @@ section h2 {
     padding: 2rem;
 }
 
+/* Project Section */
 .project {
     text-align: center;
     max-width: 800px;
@@ -369,13 +373,10 @@ section h2 {
 
 /* Contact Section Styling */
 #contact {
-    background-color: #000000;
     padding: 60px 0;
-    color: #ffffff;
 }
 
 #contact h2 {
-    color: #ffffff;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -432,14 +433,11 @@ section h2 {
 
 /* Profile Section */
 #profile {
-    background-color: #000000;
     padding: 60px 0;
-    color: #ffffff;
     text-align: center;
 }
 
 #profile h2 {
-    color: #ffffff;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -729,7 +727,6 @@ main-nav{
 }
 
 #certifications {
-    background-color: #000000;
     padding: 60px 0;
     text-align: center;
 }
@@ -768,7 +765,6 @@ main-nav{
 }
 
 #awards {
-    background-color: #000000;
     padding: 60px 0;
     text-align: center;
 }
@@ -877,7 +873,6 @@ html {
 }
 
 #about {
-    background-color: #000000;
     padding: 60px 0;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.1);
@@ -887,12 +882,10 @@ html {
 }
 
 #about h2 {
-    color: #ffffff;
     margin-bottom: 30px;
 }
 
 #about p {
-    color: #ffffff;
     font-size: 1.1rem;
     line-height: 1.8;
     max-width: 800px;
@@ -958,6 +951,7 @@ html {
     transform: scale(1.1);
 }
 
+/* Community Service Section */
 .community-service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
