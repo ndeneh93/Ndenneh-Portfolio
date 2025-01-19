@@ -220,6 +220,7 @@ section h2 {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    perspective: 1000px;
 }
 
 .skill-category h3 {
@@ -984,4 +985,21 @@ html {
 
 .community-service-item p {
     color: rgba(255, 255, 255, 0.7);
+}
+
+/* 3D Effect Styles */
+.three-d {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000;
+    transition: transform 0.3s ease;
+}
+
+.three-d:hover {
+    transform: translateZ(20px);
+}
+
+.italic {
+    font-style: italic;
 }
