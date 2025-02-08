@@ -87,7 +87,7 @@ header {
 }
 
 header:hover {
-    background-color: rgba(0, 115, 230, 0.2);
+    background-color: #000000; /* Changed to dark black */
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
@@ -149,14 +149,14 @@ header nav ul li a {
 }
 
 header nav ul li:hover {
-    background-color: rgba(0, 115, 230, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
 /* General Section Styles */
 section {
     padding: 60px 0;
-    background-color: #000000;
+    background-color: #000000; /* Changed to dark black */
     color: #ffffff;
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -172,7 +172,7 @@ section h2 {
 
 /* Specific Section Styles */
 #skills, #certifications, #projects, #community-service, #contact, #about {
-    background-color: #000000;
+    background-color: #000000; /* Changed to dark black */
     color: #ffffff;
 }
 
@@ -266,9 +266,16 @@ section h2 {
 /* Projects Section Styling */
 #projects {
     padding: 60px 0;
+    background-color: var(--section-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    margin: 20px;
+    transition: all 0.3s ease;
 }
 
 #projects h2 {
+    color: var(--text-color);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -307,17 +314,17 @@ section h2 {
     border-radius: 10px;
     margin: 20px auto;
     transition: all 0.3s ease;
-    border: 1px solid #110101;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .project:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .project h3 {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -326,7 +333,7 @@ section h2 {
 }
 
 .project p {
-    color: #ffffff;
+    color: var(--text-color);
     font-size: 1.1rem;
     line-height: 1.8;
     margin: 20px auto;
@@ -1002,4 +1009,69 @@ html {
 
 .italic {
     font-style: italic;
+}
+
+/* Internship Section Styling */
+#internship {
+    padding: 60px 0;
+    background-color: var(--section-bg);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    margin: 20px;
+    transition: all 0.3s ease;
+}
+
+#internship h2 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#internship .internship-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#internship .internship-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+#internship h3 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#internship p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 20px auto;
+    max-width: 700px;
+    padding: 0 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] #internship p,
+[data-theme="dark"] #projects p {
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+[data-theme="dark"] #internship h3,
+[data-theme="dark"] #projects h3 {
+    color: #ffffff;
+    opacity: 1;
 }
