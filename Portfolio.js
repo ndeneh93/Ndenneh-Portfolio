@@ -18,6 +18,7 @@ function typeWriter() {
         setTimeout(typeWriter, 50);
     }
 }
+typeWriter(); // Call the function to start the typing animation
 
 // Fade in sections
 const observer = new IntersectionObserver((entries) => {
@@ -36,41 +37,17 @@ document.querySelectorAll('section').forEach((section) => {
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
 }
+
 // Theme toggle functionality
 function toggleTheme() {
-    document.documentElement.setAttribute('data-theme', 
-        document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-    );
-    localStorage.setItem('theme', document.documentElement.getAttribute('data-theme'));
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme === 'dark');
 }
 
-// Check for saved theme preference
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-});
-
-// Wait for DOM content to load
-document.addEventListener('DOMContentLoaded', function() {
-    // Get saved theme from localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.add(savedTheme);
-        updateThemeIcon(savedTheme === 'dark-theme');
-    }
-});
-
-function toggleTheme() {
-    const body = document.body;
-    const isDark = body.classList.toggle('dark-theme');
-    
-    // Save theme preference
-    localStorage.setItem('theme', isDark ? 'dark-theme' : '');
-    
-    // Update icon
-    updateThemeIcon(isDark);
-}
-
+// Update theme icon based on the current theme
 function updateThemeIcon(isDark) {
     const icon = document.querySelector('#theme-toggle i');
     if (isDark) {
@@ -81,6 +58,16 @@ function updateThemeIcon(isDark) {
         icon.classList.add('fa-moon');
     }
 }
+
+// Check for saved theme preference
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme === 'dark');
+});
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', initTheme);
 
 function initTheme() {
     // Check if user has system dark mode preference
@@ -99,12 +86,9 @@ function initTheme() {
         const newTheme = e.matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme === 'dark');
     });
 }
 
-// Initialize theme when page loads
-document.addEventListener('DOMContentLoaded', initTheme);
-
-function closeFooter() {
-    document.querySelector('footer').style.display = 'none';
-}
+// Theme Toggle Function
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
