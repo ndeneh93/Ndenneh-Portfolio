@@ -9,10 +9,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     color: #ffffff;
+    text-align: center; /* Center text horizontally */
 }
 
 a {
-    color: blue;
+    color: #1e90ff;
     text-decoration: none;
 }
 
@@ -22,14 +23,14 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #000000; /* Change the background color to dark black */
+    background-color: #000000; /* Dark black background */
     padding: 20px 0;
     text-align: center;
 }
 
 header .profile-pic {
-    width: 150px; /* Reduce the size of the profile image */
-    height: 150px; /* Ensure the image is square */
+    width: 100px; /* Reduce the size of the profile image */
+    height: 100px; /* Ensure the image is square */
     border: 1px solid #ffffff;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     border-radius: 50%; /* Make the image circular */
@@ -47,6 +48,7 @@ header p {
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -86,189 +88,40 @@ section p {
     padding: 0 20px;
 }
 
-/* Skills Section */
-.skills-content {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Make it responsive */
-}
-
-.skill-category {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
-    flex: 1 1 300px; /* Make it responsive */
-}
-
-/* Certifications Section */
-.certification-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.certification-item {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1 1 300px; /* Make it responsive */
-}
-
-/* Awards Section */
-.awards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.award-item {
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1 1 300px; /* Make it responsive */
-}
-
-/* Video Section */
-#videos {
+/* List Group Items */
+.list-group-item {
     background-color: #1f1f1f;
-    padding: 60px 0;
-    margin: 20px 0;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-}
-
-#videos:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-#videos h2 {
-    margin-bottom: 30px;
     color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left; /* Align text to the left */
 }
 
-.video-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.video-item {
-    background-color: #2a2a2a;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-    flex: 1 1 300px; /* Make it responsive */
-}
-
-.video-item video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.video-item p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 10px;
-}
-
-/* Community Service Section */
-#community-service {
-    background-color: #1f1f1f;
-    padding: 60px 0;
-    margin: 20px 0;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: center; /* Center text horizontally */
-}
-
-#community-service:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-#community-service h2 {
-    margin-bottom: 30px;
-    color: #ffffff;
-}
-
-.community-service-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-}
-
-.community-service-item {
-    margin-bottom: 20px;
-}
-
-.community-service-item i {
+.list-group-item i {
     margin-right: 10px;
 }
 
 /* Contact Section */
-#contact {
-    background-color: #1f1f1f;
-    padding: 60px 0;
-    margin: 20px 0;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: center; /* Center text horizontally */
-}
-
-#contact:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-#contact h2 {
-    margin-bottom: 30px;
-    color: #ffffff;
-}
-
 .contact-info {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
+    align-items: center;
 }
 
 .contact-item {
     margin-bottom: 20px;
 }
 
-.contact-item i {
-    margin-right: 10px;
+#contact a {
+    color: #1e90ff;
 }
 
-.cv-section {
-    margin-top: 20px;
-}
-
-.cv-section a {
-    color: #ffffff;
-    background-color: #1e90ff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.cv-section a:hover {
-    background-color: #1c86ee;
+#contact a:hover {
+    text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background-color: #1f1f1f;
+    background-color: #000000; /* Dark black background */
     padding: 20px 0;
     text-align: center;
 }
@@ -280,14 +133,24 @@ footer p {
 footer .social-links a {
     color: #ffffff;
     margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 footer .social-links a:hover {
     color: #1e90ff;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
 @media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flex-item {
+        flex: 1 1 100%;
+    }
+
     .skills-content, .certification-grid, .awards-grid, .video-gallery {
         flex-direction: column;
         align-items: center;
@@ -297,4 +160,3 @@ footer .social-links a:hover {
         flex: 1 1 100%;
     }
 }
-

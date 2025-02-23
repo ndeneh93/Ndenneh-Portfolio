@@ -2,331 +2,114 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Ndenneh Chubu" />
-  <meta name="color-scheme" content="light dark">
-  <title>Ndenneh Chubu's Portfolio</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="portfolio.css" />
-  <link rel="icon" href="./images/favicon.ico" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ndenneh Chubu - Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="Portfolio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
-  <header class="bg-primary text-white py-5">
-    <div class="container text-center">
-      <button id="theme-toggle" class="btn position-fixed top-0 end-0 m-3 theme-toggle" onclick="toggleTheme()"
-        aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-      </button>
-      <div class="profile-header text-center">
-        <img src="Ndenneh Chubu.jpg" alt="Ndenneh Chubu" class="profile-pic img-fluid rounded-circle shadow mb-4"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/150';" />
-      </div>
-      <h1 class="display-4 text-center mb-3">Ndenneh Chubu</h1>
-      <p class="lead text-center">
-
-      </p>
-      <p>Software Developer | Front-End Development Intern @ SaiKet Systems | Cybersecurity Intern @ The Red Users |
-        Bsc. Computer Science | B.Tech. Computer Applications
-      </p>
-    </div>
-
-    <nav class="text-center">
-      <ul class="d-inline-flex list-unstyled">
-        <li class="mx-2"><a href="#about">About</a></li>
-        <li class="mx-2"><a href="#skills">Skills</a></li>
-        <li class="mx-2"><a href="#projects">Projects</a></li>
-        <li class="mx-2"><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="bg-dark text-white text-center py-3">
+    <h1>Ndenneh Chubu</h1>
+    <p>Software Developer | Cybersecurity Specialist |</p>
   </header>
 
-  <section id="about" class="text-center">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-      <h2>About Me</h2>
-      <p>
-        Hello there! <br>I have a strong passion for both Software development and cybersecurity. Currently, I am working as a remote
-        intern at The Red Users, where I am learning to improve web application security, and at SaiKet Systems, where I
-        focus on designing user-friendly interfaces and develop applications that meet the needs of the users.
-
-        I am also pursuing a degree in Computer Science at Baku State University, strengthening my technical and
-        analytical skills, with plans to graduate in mid-2025.
-
-        I love building websites and applications while also learning how to keep them secure. My work involves setting
-        up strong firewalls, preventing cyber threats, and using JavaScript to create dynamic and engaging web
-        experiences. My goal is to develop seamless digital experiences while ensuring they remain safe from cyber
-          risks.
-      </p>
-    </div>
-  </section>
-
-  <section id="skills" class="text-center">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-content">
-        <div class="skill-category">
-          <h3>Technical Skills</h3>
-          <ul class="list-unstyled">
-            <li>Frontend Development (HTML5, CSS, JavaScript)</li>
-            <li>IT Support and Troubleshooting</li>
-            <li>Network Administration</li>
-            <li>Data Analysis</li>
-          </ul>
-        </div>
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <ul class="list-unstyled">
-            <li>Project Management</li>
-            <li>Team Leadership</li>
-            <li>Problem Solving</li>
-            <li>Communication</li>
-          </ul>
-        </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internship">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
+  </nav>
+
+  <section id="about" class="container mt-5 text-center">
+    <img src="Ndennh1.jpg" alt="Ndenneh Chubu" class="img-fluid rounded-circle mb-3" width="150">
+    <p>Hello! I am Ndenneh Chubu and I am passionate about software development and cybersecurity.</p>
   </section>
 
-  <section id="certifications" class="text-center">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="certification-grid">
-        <div class="certification-item">
-          <i class="fab fa-linkedin"></i>
-          <h3>LinkedIn Learning</h3>
-          <p>Cloud Computing</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>CISCO Networking Academy</h3>
-          <p>Cybersecurity Essentials</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-award"></i>
-          <h3>YALI RLC West Africa</h3>
-          <p>Emerging Leaders Scholar</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-user-shield"></i>
-          <h3>Professional Certification</h3>
-          <p>IT Support Specialist</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-globe-africa"></i>
-          <h3>Climate Change Conference</h3>
-          <p>UNFCCC COP29 & COY19</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-file-excel"></i>
-          <h3>Amity University</h3>
-          <p>Advanced Excel</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-server"></i>
-          <h3>Coursera</h3>
-          <p>System Administration</p>
-        </div>
-        <div class="certification-item">
-          <i class="fas fa-server"></i>
-          <h3>CISCO Networking Academy</h3>
-          <p>Cyber Threat Management</p>
-        </div>
-      </div>
-    </div>
+  <section id="education" class="container mt-5 text-center">
+    <h2 class="text-center">Education</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-graduation-cap"></i> B.Sc. Computer Science,
+        Baku State University</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-graduation-cap"></i> Bachelor of Computer
+        Applications, Amity University</li>
+    </ul>
   </section>
 
-  <section id="awards" class="text-center">
-    <div class="container">
-      <h2>Awards</h2>
-      <div class="awards-grid">
-        <div class="award-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Indian Government Scholarship</h3>
-          <p>Bachelor's degree</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-users"></i>
-          <h3>YALI RLC</h3>
-          <p>Emerging Leaders Program</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-leaf"></i>
-          <h3>UNFCCC Climate Conference</h3>
-          <p>COY19 & COP29</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-leaf"></i>
-          <h3>Ministry of Foreign Affairs Azerbaijan</h3>
-          <p>International Model <br>Non-Aligned Movement Simulation Exercise</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Azerbaijan Government Scholarship</h3>
-          <p>Bachelor's degree</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Ingressive for Good Scholarship</h3>
-          <p>Cybersecurity</p>
-        </div>
-      </div>
-    </div>
+  <section id="awards" class="container mt-5 text-center">
+    <h2 class="text-center">Awards</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-award"></i> Azerbaijan Government
+        Scholarship</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-award"></i> I4G CISCO Cybersecurity
+        Scholarship</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-award"></i> e-VBAB India Government
+        Scholarship</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-award"></i> Emerging Leaders Program, YALI
+        Cohort 14</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-award"></i> ICCR India Government Scholarship
+      </li>
+    </ul>
   </section>
 
-  <section id="research-project" class="text-center">
-    <div class="container">
-      <h2>Research Project</h2>
-      <div class="project">
-        <h3>Security and Privacy</h3>
-        <p>Research project focused on enhancing cybersecurity measures and privacy protocols in our online activities
-          and implemented robust security frameworks and data protection strategies.</p>
-        <div class="project-links">
-          <a href="Amity Project.pdf" target="_blank">
-            <i class="fas fa-book-reader"></i> Documentation
-          </a>
-        </div>
-      </div>
-    </div>
+  <section id="certifications" class="container mt-5 text-center">
+    <h2 class="text-center">Certifications</h2>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-certificate"></i> Google IT Support
+        Professional</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-certificate"></i> CCSK v4.1 Foundation
+        Training</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-certificate"></i> Introduction to
+        Cybersecurity</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-certificate"></i> Introduction to Cloud
+        Computing</li>
+      <li class="list-group-item bg-dark text-white"><i class="fa-solid fa-certificate"></i> Cyber Threat Management
+      </li>
+    </ul>
   </section>
 
-  <section id="internship" class="text-center">
-    <div class="container">
-      <h2>Internship Experience</h2>
-      <div class="internship-content">
-        <h3>Front-End Development Intern at Saiket Systems</h3>
+  <section id="internship" class="container mt-5 text-center">
+    <h2 class="text-center">Internship Experience</h2>
+    <div class="list-group">
+      <div class="list-group-item bg-dark text-white">
+        <h3><i class="fa-solid fa-code"></i> Front-end Developer @ SaiKet Systems</h3>
         <p>During my internship at Saiket Systems, I worked on various front-end development projects. I gained hands-on
           experience with HTML5, CSS3, and JavaScript, and contributed to the development of responsive and
           user-friendly web applications. My responsibilities included designing and implementing web pages, debugging
           and optimizing code, and collaborating with the development team to deliver high-quality solutions.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="projects" class="text-center">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>Blog Post Layout</h3>
-        <p>Designed and implemented a blog post layout using HTML and CSS, focusing on readability and user engagement.
-        </p>
-      </div>
-      <div class="project">
-        <h3>Styled Product Card</h3>
-        <p>Created a visually appealing product card using CSS, showcasing product details and images effectively.</p>
-      </div>
-      <div class="project">
-        <h3>Responsive Web Page</h3>
-        <p>Developed a responsive web page that adapts to different screen sizes, ensuring a seamless user experience
-          across devices.</p>
-      </div>
-      <div class="project">
-        <h3>Quiz Application</h3>
-        <p>Built a quiz application using JavaScript, allowing users to test their knowledge with interactive questions
-          and answers.</p>
-      </div>
-      <div class="project">
-        <h3>To-Do List App</h3>
-        <p>Implemented a to-do list app with JavaScript, enabling users to add, edit, and delete tasks, and track their
-          progress.</p>
+      <div class="list-group-item bg-dark text-white">
+        <h3><i class="fa-solid fa-shield-alt"></i> Cybersecurity Intern @ The Red Users</h3>
+        <p>As a Cybersecurity Intern at The Red Users, I was responsible for identifying and mitigating security
+          vulnerabilities, conducting security assessments, and implementing security measures to protect the
+          organization's digital assets. I gained valuable experience in threat analysis, incident response, and
+          security best practices.</p>
       </div>
     </div>
   </section>
 
-  <section id="videos" class="text-center">
-    <div class="container">
-      <h2>Project Videos</h2>
-      <div class="video-upload">
-        <form action="Task_4.mp4" method="post" enctype="multipart/form-data">
-        </form>
-      </div>
-      <div class="video-gallery">
-        <!-- Add video elements here -->
-        <div class="video-item">
-          <video controls>
-            <source src="Task_4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>Quiz application</p>
-        </div>
-        <!-- Add more video items as needed -->
-        <div class="video-item">
-          <video controls>
-            <source src="Product Card.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>Product Cart</p>
-        </div>
-      </div>
-    </div>
+  <section id="contact" class="container mt-5 text-center">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
+    <p>Phone: <a href="tel:+994507879269">+994 50 787 92 69</a></p>
   </section>
 
-  <section id="community-service" class="text-center">
-    <div class="container">
-      <h2>Community Service</h2>
-      <div class="community-service-grid">
-        <div class="community-service-item">
-          <i class="fas fa-hands-helping"></i>
-          <h3>Poor Drainage</h3>
-          <p>Assisted in organizing talks shows and community services in raising the adverse impacts of poor drainage
-            in our society.</p>
-        </div>
-        <div class="community-service-item">
-          <i class="fas fa-tree"></i>
-          <h3>Environmental Cleanup</h3>
-          <p>Participated in community efforts to clean and preserve local parks and beaches.</p>
-        </div>
-        <div class="community-service-item">
-          <i class="fas fa-chalkboard-teacher"></i>
-          <h3>Mentorship Program</h3>
-          <p>Provided guidance and support to the community in underprivileged areas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="text-center">
-    <div class="container">
-      <h2>Contacts</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+994507879269">+994 50 787 92 69</a>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a>
-        </div>
-        <!-- Add CV Download Section -->
-        <div class="cv-section text-center mt-4">
-          <a href="Ndenneh Chubu_CV.pdf" class="btn btn-light btn-lg" download="Ndenneh Chubu_CV.pdf" target="_blank">
-            <i class="fas fa-file-download me-2"></i>
-            Download CV
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center">
-    <div class="container">
-      <div class="social-links mb-4">
-        <a href="https://www.linkedin.com/in/ndenneh-chubu" target="_blank" class="social-icon">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.researchgate.net/profile/Ndenneh-Chubu-2" target="_blank" class="social-icon">
-          <i class="fab fa-researchgate"></i>
-        </a>
-        <a href="https://github.com/ndeneh93" target="_blank" class="social-icon">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-
-      <p>Made with <i class="fas fa-heart heart-icon"></i> by Ndenneh Chubu</p>
-      <p>&copy; 2025 <br>All rights reserved.</p>
-    </div>
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2025 Ndenneh Chubu. All Rights Reserved.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

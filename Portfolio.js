@@ -1,9 +1,12 @@
 // Smooth scrolling
-document.querySelectorAll('nav a').forEach(anchor => {
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const section = document.querySelector(this.getAttribute('href'));
-        section.scrollIntoView({ behavior: 'smooth' });
+        const targetId = this.getAttribute('href').substring(1);
+        const section = document.getElementById(targetId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
@@ -12,26 +15,27 @@ const text = "Computer Science at Baku State University | Cybersecurity Research
 let index = 0;
 function typeWriter() {
     const typeTarget = document.querySelector('.type-text');
-    if (index < text.length) {
-        typeTarget.textContent += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, 50);
+    if (typeTarget) {
+        if (index === 0) typeTarget.textContent = ''; // Reset before starting
+        if (index < text.length) {
+            typeTarget.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 50);
+        }
     }
 }
-typeWriter(); // Call the function to start the typing animation
+document.addEventListener('DOMContentLoaded', typeWriter); // Start when page loads
 
-// Fade in sections
-const observer = new IntersectionObserver((entries) => {
+// Fade-in sections on scroll
+const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
         }
     });
-});
+}, { threshold: 0.1 });
 
-document.querySelectorAll('section').forEach((section) => {
-    observer.observe(section);
-});
+document.querySelectorAll('section').forEach(section => observer.observe(section));
 
 // Dark mode toggle
 function toggleDarkMode() {
@@ -50,36 +54,19 @@ function toggleTheme() {
 // Update theme icon based on the current theme
 function updateThemeIcon(isDark) {
     const icon = document.querySelector('#theme-toggle i');
-    if (isDark) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+    if (icon) {
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
     }
 }
 
-// Check for saved theme preference
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme === 'dark');
-});
-
-// Initialize theme when page loads
-document.addEventListener('DOMContentLoaded', initTheme);
-
+// Initialize theme on page load
 function initTheme() {
-    // Check if user has system dark mode preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const storedTheme = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
     
-    // Set theme based on system preference or stored preference
-    if (storedTheme) {
-        document.documentElement.setAttribute('data-theme', storedTheme);
-    } else if (prefersDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    document.documentElement.setAttribute('data-theme', storedTheme);
+    updateThemeIcon(storedTheme === 'dark');
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
@@ -90,5 +77,10 @@ function initTheme() {
     });
 }
 
-// Theme Toggle Function
-document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+});
