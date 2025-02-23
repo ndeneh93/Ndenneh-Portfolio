@@ -15,6 +15,7 @@ const text = "Computer Science at Baku State University | Cybersecurity Research
 let index = 0;
 function typeWriter() {
     const typeTarget = document.querySelector('.type-text');
+    if (!typeTarget) return;
     if (typeTarget) {
         if (index === 0) typeTarget.textContent = ''; // Reset before starting
         if (index < text.length) {
@@ -52,13 +53,10 @@ function toggleTheme() {
 }
 
 // Update theme icon based on the current theme
-function updateThemeIcon(isDark) {
     const icon = document.querySelector('#theme-toggle i');
-    if (icon) {
-        icon.classList.toggle('fa-moon', !isDark);
-        icon.classList.toggle('fa-sun', isDark);
-    }
-}
+    if (!icon) return;
+    icon.classList.toggle('fa-moon', !isDark);
+    icon.classList.toggle('fa-sun', isDark);
 
 // Initialize theme on page load
 function initTheme() {

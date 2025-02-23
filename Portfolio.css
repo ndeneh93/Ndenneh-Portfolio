@@ -1,162 +1,101 @@
 /* General Styles */
 body {
     background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-    text-align: center; /* Center text horizontally */
-}
-
-a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Header */
-header {
-    background-color: #000000; /* Dark black background */
-    padding: 20px 0;
-    text-align: center;
-}
-
-header .profile-pic {
-    width: 100px; /* Reduce the size of the profile image */
-    height: 100px; /* Ensure the image is square */
-    border: 1px solid #ffffff;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    border-radius: 50%; /* Make the image circular */
-}
-
-header h1 {
-    margin: 10px 0;
-}
-
-header p {
-    color: #b0b0b0;
-}
-
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
+  }
+  
+  /* Header */
+  header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: #222;
+  }
+  
+  .navbar-nav .nav-link {
     color: #ffffff;
     font-weight: bold;
-}
-
-/* Sections */
-section {
-    padding: 60px 0;
-    margin: 20px 0;
-    background-color: #1f1f1f;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #00bcd4;
+  }
+  
+  /* Sections */
+  section {
+    background-color: #1c1c1c;
+    padding: 50px;
     border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: center; /* Center text horizontally */
-}
-
-section:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-section h2 {
     margin-bottom: 30px;
-}
-
-section p {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.8;
-    font-size: 1.1rem;
-    padding: 0 20px;
-}
-
-/* List Group Items */
-.list-group-item {
-    background-color: #1f1f1f;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left; /* Align text to the left */
-}
-
-.list-group-item i {
-    margin-right: 10px;
-}
-
-/* Contact Section */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-item {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  h2 {
+    color: #00bcd4;
+    text-transform: uppercase;
     margin-bottom: 20px;
-}
-
-#contact a {
-    color: #1e90ff;
-}
-
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: #000000; /* Dark black background */
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-
-footer .social-links a {
+  }
+  
+  /* List Group */
+  .list-group-item {
+    background-color: #222;
+    color: #e0e0e0;
+    border: 1px solid #333;
+  }
+  
+  .list-group-item i {
+    color: #00bcd4;
+    margin-right: 10px;
+  }
+  
+  /* Profile Image */
+  .profile-pic {
+    border: 4px solid #00bcd4;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+  }
+  
+  /* Social Links */
+  .social-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-link {
+    color: #00bcd4;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-link:hover {
     color: #ffffff;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-footer .social-links a:hover {
-    color: #1e90ff;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .flex-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flex-item {
-        flex: 1 1 100%;
-    }
-
-    .skills-content, .certification-grid, .awards-grid, .video-gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-category, .certification-item, .award-item, .video-item {
-        flex: 1 1 100%;
-    }
-}
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1e1e1e;
+    padding: 20px;
+    font-size: 0.9rem;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
