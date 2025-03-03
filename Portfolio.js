@@ -6,6 +6,8 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         const section = document.getElementById(targetId);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error(`Section with id ${targetId} not found.`);
         }
     });
 });
