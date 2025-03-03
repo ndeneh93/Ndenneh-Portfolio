@@ -7,7 +7,7 @@ body {
     padding: 0;
   }
   
-  /* Header */
+  /* Header Styles */
   header {
     background-color: #1e1e1e;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -22,7 +22,7 @@ body {
     font-size: 1.2rem;
   }
   
-  /* Navbar */
+  /* Navbar Styles */
   .navbar {
     background-color: #222;
   }
@@ -37,7 +37,7 @@ body {
     color: #00bcd4;
   }
   
-  /* Sections */
+  /* Section Styles */
   section {
     background-color: #1c1c1c;
     padding: 50px;
