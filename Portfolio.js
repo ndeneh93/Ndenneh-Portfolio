@@ -53,15 +53,12 @@ function toggleTheme() {
 }
 
 // Update theme icon based on the current theme
+function updateThemeIcon(isDark) {
     const icon = document.querySelector('#theme-toggle i');
     if (!icon) return;
     icon.classList.toggle('fa-moon', !isDark);
     icon.classList.toggle('fa-sun', isDark);
-    function myFunction() {
-        // Some code here
-        return; // Ensure this is inside a function
-    }
-    // Update theme icon based on the current theme
+}
 
 // Initialize theme on page load
 function initTheme() {
