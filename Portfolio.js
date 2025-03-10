@@ -1,5 +1,6 @@
 // Smooth scrolling
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+const smoothScrollLinks = document.querySelectorAll('nav a[href^="#"]');
+smoothScrollLinks.forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
@@ -7,7 +8,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
         } else {
-            console.error(`Section with id ${targetId} not found.`);
+            console.error(`Section with id '${targetId}' not found.`);
         }
     });
 });
@@ -18,32 +19,26 @@ let index = 0;
 function typeWriter() {
     const typeTarget = document.querySelector('.type-text');
     if (!typeTarget) return;
-    if (typeTarget) {
-        if (index === 0) typeTarget.textContent = ''; // Reset before starting
-        if (index < text.length) {
-            typeTarget.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeWriter, 50);
-        }
+    if (index === 0) typeTarget.textContent = ''; // Reset before starting
+    if (index < text.length) {
+        typeTarget.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 50);
     }
 }
-document.addEventListener('DOMContentLoaded', typeWriter); // Start when page loads
+document.addEventListener('DOMContentLoaded', typeWriter);
 
 // Fade-in sections on scroll
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('fade-in');
+            observer.unobserve(entry.target); // Stop observing after fade-in
         }
     });
 }, { threshold: 0.1 });
 
 document.querySelectorAll('section').forEach(section => observer.observe(section));
-
-// Dark mode toggle
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-}
 
 // Theme toggle functionality
 function toggleTheme() {
@@ -54,7 +49,7 @@ function toggleTheme() {
     updateThemeIcon(newTheme === 'dark');
 }
 
-// Update theme icon based on the current theme
+// Update theme icon
 function updateThemeIcon(isDark) {
     const icon = document.querySelector('#theme-toggle i');
     if (!icon) return;
@@ -66,11 +61,10 @@ function updateThemeIcon(isDark) {
 function initTheme() {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const storedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-    
     document.documentElement.setAttribute('data-theme', storedTheme);
     updateThemeIcon(storedTheme === 'dark');
 
-    // Listen for system theme changes
+    // Detect system theme change
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
         const newTheme = e.matches ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', newTheme);
@@ -85,4 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
     }
+});
+
+document.addEventListener('scroll', function() {
+  const backToTopButton = document.querySelector('.back-to-top');
+  if (window.scrollY > 300) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
 });
