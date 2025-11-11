@@ -15,25 +15,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <style>
+    /* Color Palette */
     :root {
-      --primary: #0d6efd;
+      --primary: #1f7a8c; /* muted teal */
+      --secondary: #f4f4f9; /* light gray background */
       --text-color: #212529;
-      --bg-color: #f8f9fa;
       --card-bg: #ffffff;
+      --accent: #f26b38; /* highlight color */
     }
 
     [data-theme="dark"] {
-      --primary: #0d6efd;
-      --text-color: #f8f9fa;
-      --bg-color: #121212;
-      --card-bg: #1f1f1f;
+      --primary: #1f7a8c;
+      --secondary: #121212;
+      --text-color: #f4f4f9;
+      --card-bg: #1e1e1e;
+      --accent: #f26b38;
     }
 
     body {
-      background-color: var(--bg-color);
+      background-color: var(--secondary);
       color: var(--text-color);
-      transition: all 0.3s ease;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
     }
 
     a {
@@ -42,6 +45,7 @@
     }
 
     a:hover {
+      color: var(--accent);
       text-decoration: underline;
     }
 
@@ -69,7 +73,7 @@
     }
 
     .navbar-nav .nav-link:hover {
-      color: #ffd700;
+      color: var(--accent);
     }
 
     .section-title {
@@ -190,7 +194,7 @@
   </header>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary);">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -310,7 +314,7 @@
     </div>
   </section>
 
-  <!-- Internship -->
+  <!-- Internship & Experience -->
   <section id="internship" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Internship & Experience</h2>
     <div class="timeline-card">
@@ -341,42 +345,37 @@
   <section id="projects" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
     <div class="row g-4 justify-content-center">
-      <!-- Portfolio -->
       <div class="col-md-4">
-        <div class="card project-card text-center">
+        <div class="card text-center">
           <h5><i class="fa-solid fa-laptop-code me-2"></i>Portfolio Website</h5>
-          <p>Created a personal portfolio website using HTML, CSS, and JavaScript.</p>
+          <p>Personal portfolio using HTML, CSS, JavaScript.</p>
           <div class="project-links mt-2">
-            <a href="https://github.com/ndeneh93/portfolio" target="_blank"
-              class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
-            <a href="https://ndenneh-portfolio.vercel.app/" target="_blank"
-              class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+            <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="https://ndenneh-portfolio.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
           </div>
         </div>
       </div>
-
-      <!-- Quiz App -->
       <div class="col-md-4">
-        <div class="card project-card text-center">
+        <div class="card text-center">
           <h5><i class="fa-solid fa-clipboard-question me-2"></i>Quiz Application</h5>
-          <p>Built a multiple-choice quiz app using JavaScript and HTML.</p>
+          <p>Multiple-choice quiz app using JavaScript.</p>
           <div class="project-links mt-2">
-            <a href="https://github.com/ndeneh93/quiz-app" target="_blank"
-              class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+            <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
             <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
                 class="fas fa-external-link-alt me-1"></i> Live Demo</a>
           </div>
         </div>
       </div>
-
-      <!-- To-Do App -->
       <div class="col-md-4">
-        <div class="card project-card text-center">
+        <div class="card text-center">
           <h5><i class="fa-solid fa-list-check me-2"></i>To-Do List App</h5>
-          <p>Developed a task management app using JavaScript and HTML.</p>
+          <p>Task management app using JavaScript.</p>
           <div class="project-links mt-2">
-            <a href="https://github.com/ndeneh93/todo-app" target="_blank"
-              class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+            <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
             <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
                 class="fas fa-external-link-alt me-1"></i> Live Demo</a>
           </div>
@@ -389,15 +388,10 @@
   <section id="contact" class="container mt-5 text-center" data-aos="fade-up">
     <h2 class="section-title">Contact Me</h2>
     <form action="https://formspree.io/f/meoaqgag" method="POST" class="mb-4">
-      <div class="mb-3">
-        <input type="text" class="form-control" name="name" placeholder="Name" required>
-      </div>
-      <div class="mb-3">
-        <input type="email" class="form-control" name="email" placeholder="Email" required>
-      </div>
-      <div class="mb-3">
-        <textarea class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
-      </div>
+      <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" required></div>
+      <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
+      <div class="mb-3"><textarea class="form-control" name="message" rows="3" placeholder="Message"
+          required></textarea></div>
       <button type="submit" class="btn btn-primary">Send</button>
     </form>
     <p><i class="fa fa-envelope"></i> <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
@@ -424,13 +418,13 @@
 
     function toggleTheme() {
       const body = document.body;
-      const currentTheme = body.getAttribute("data-theme");
-      if (currentTheme === "light") {
+      const icon = document.querySelector("#theme-toggle i");
+      if (body.getAttribute("data-theme") === "light") {
         body.setAttribute("data-theme", "dark");
-        document.querySelector("#theme-toggle i").classList.replace("fa-moon", "fa-sun");
+        icon.classList.replace("fa-moon", "fa-sun");
       } else {
         body.setAttribute("data-theme", "light");
-        document.querySelector("#theme-toggle i").classList.replace("fa-sun", "fa-moon");
+        icon.classList.replace("fa-sun", "fa-moon");
       }
     }
   </script>
