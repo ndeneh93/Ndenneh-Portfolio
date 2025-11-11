@@ -1,291 +1,200 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ndenneh Chubu - Portfolio</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
-  <!-- AOS Animations -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap"
-    rel="stylesheet" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ndenneh Chubu | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* Theme Colors */
-    :root {
-      --primary: #0b7285;
-      --accent: #f26b38;
-      --bg-light: #f8fafc;
-      --text: #212529;
-      --card-bg: #ffffff;
-      --gradient: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
+    body {
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.5s, color 0.5s;
+      background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+      color: #222;
     }
 
     [data-theme="dark"] {
-      --primary: #3bc9db;
-      --accent: #f26b38;
-      --bg-light: #121212;
-      --text: #f1f1f1;
-      --card-bg: #1e1e1e;
-      --gradient: linear-gradient(135deg, #0a0a0a 0%, #1e1e1e 100%);
+      background: linear-gradient(135deg, #0a192f, #172a45);
+      color: #e0e0e0;
     }
 
-    body {
-      background: var(--gradient);
-      color: var(--text);
-      font-family: "Inter", sans-serif;
-      transition: all 0.4s ease;
-      scroll-behavior: smooth;
+    .navbar {
+      background: linear-gradient(90deg, #00796b, #004d40);
     }
 
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-family: "Poppins", sans-serif;
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
-
-    nav {
-      background-color: var(--primary);
-      font-family: "Poppins", sans-serif;
-    }
-
-    .navbar-nav .nav-link {
-      color: #fff;
-      margin: 0 10px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: var(--accent);
-    }
-
-    section {
-      padding: 70px 0;
+    [data-theme="dark"] .navbar {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     }
 
     .section-title {
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
-      font-size: 2rem;
       text-align: center;
-      margin-bottom: 40px;
-      position: relative;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #00796b;
     }
 
-    .section-title::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -10px;
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
-      border-radius: 2px;
-      transform: translateX(-50%);
+    [data-theme="dark"] .section-title {
+      color: #4fc3f7;
     }
 
     .card {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.9);
       border: none;
       border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    [data-theme="dark"] .card {
+      background: rgba(20, 29, 46, 0.9);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
-    .profile-pic {
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      border: 5px solid var(--primary);
-      object-fit: cover;
-      margin-bottom: 20px;
+    .btn {
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.2s;
     }
 
-    .project-links a {
-      margin: 6px;
-      transition: all 0.3s ease;
-    }
-
-    .project-links a:hover {
-      transform: scale(1.05);
-    }
-
-    #theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.3s ease;
-    }
-
-    #theme-toggle:hover {
-      background: var(--accent);
-    }
-
-    footer {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 20px;
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .back-to-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: var(--primary);
-      color: #fff;
+      background: #00796b;
+      color: white;
       border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      text-decoration: none;
-      transition: background 0.3s ease;
+      padding: 12px;
+      display: none;
+      transition: 0.3s;
+    }
+
+    [data-theme="dark"] .back-to-top {
+      background: #4fc3f7;
+      color: #000;
     }
 
     .back-to-top:hover {
-      background: var(--accent);
+      transform: scale(1.1);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #004d40, #00796b);
+    }
+
+    [data-theme="dark"] footer {
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
     }
   </style>
 </head>
 
-<body data-theme="light">
-  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-    <i class="fas fa-moon"></i>
-  </button>
+<body>
 
-  <header data-aos="fade-down">
-    <h1>Ndenneh Chubu</h1>
-    <p>Backend Engineer | NAFA Financial Services, The Gambia</p>
-  </header>
-
-  <nav class="navbar navbar-expand-lg navbar-dark">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark py-3">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand fw-bold text-white" href="#">Ndenneh Chubu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
+        <button class="btn btn-outline-light ms-3" id="theme-toggle" onclick="toggleTheme()">
+          <i class="fa-solid fa-moon"></i>
+        </button>
       </div>
     </div>
   </nav>
 
   <!-- About -->
-  <section id="about" class="text-center container" data-aos="fade-up">
-    <img src="Ndenneh Chubu.jpg" class="profile-pic" alt="Ndenneh Chubu" />
-    <h2 class="mt-3">About Me</h2>
-    <p class="lead">Backend Engineer passionate about building scalable backend systems, API integrations, and
-      microservice interoperability.</p>
+  <section id="about" class="container mt-5 text-center" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <p>I am <b>Ndenneh Chubu</b>, a passionate backend engineer and software developer focused on building scalable APIs and microservice-based systems. I’m committed to writing clean, maintainable, and efficient code that powers real-world applications.</p>
   </section>
 
   <!-- Education -->
-  <section id="education" class="container" data-aos="fade-up">
+  <section id="education" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Education</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-5">
-        <div class="card text-center">
-          <h5>B.Sc. Computer Science</h5>
-          <p>Baku State University (2021 - 2025)</p>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-4 text-center">
+          <h5>Bachelor’s in Computer Science</h5>
+          <p>Baku State University | 2021 – 2025</p>
         </div>
       </div>
-      <div class="col-md-5">
-        <div class="card text-center">
-          <h5>Bachelor of Computer Applications</h5>
-          <p>Amity University (2020 - 2023)</p>
+      <div class="col-md-6">
+        <div class="card p-4 text-center">
+          <h5>Bachelor’s in Information Technology</h5>
+          <p>Amity University | 2020 – 2023</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards" class="container" data-aos="fade-up">
-    <h2 class="section-title">Awards</h2>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4"><div class="card text-center"><h5>Azerbaijan Government Scholarship</h5></div></div>
-      <div class="col-md-4"><div class="card text-center"><h5>I4G Cisco Cybersecurity Scholarship</h5></div></div>
-      <div class="col-md-4"><div class="card text-center"><h5>Emerging Leaders Program YALI Cohort 14</h5></div></div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="container" data-aos="fade-up">
+  <section id="projects" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
     <div class="row g-4 justify-content-center">
       <div class="col-md-4">
-        <div class="card text-center">
+        <div class="card p-4 text-center">
           <h5>Portfolio Website</h5>
-          <p>Personal portfolio using HTML, CSS, JS.</p>
-          <div class="project-links">
-            <a href="https://github.com/ndeneh93/portfolio" class="btn btn-outline-primary btn-sm" target="_blank"><i
-                class="fab fa-github me-1"></i> GitHub</a>
-            <a href="https://ndenneh-portfolio.vercel.app" class="btn btn-outline-success btn-sm" target="_blank"><i
-                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
-          </div>
+          <p>Personal portfolio showcasing my projects and achievements.</p>
+          <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+          <a href="https://ndenneh-portfolio.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <h5>Quiz Application</h5>
+          <p>Interactive JavaScript quiz app for testing knowledge.</p>
+          <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+          <a href="https://quiz-app.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-4 text-center">
+          <h5>To-Do List App</h5>
+          <p>Simple to-do app for task management with local storage.</p>
+          <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
+          <a href="https://todo-app.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container text-center" data-aos="fade-up">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Email: <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
-    <p>Phone: <a href="tel:+994507879269">+994 50 787 92 69</a></p>
-    <a href="https://www.linkedin.com/in/ndenneh-chubu/" target="_blank" class="btn btn-primary me-2"><i
-        class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-dark"><i class="fab fa-github"></i> GitHub</a>
+  <section id="contact" class="container mt-5 mb-5 text-center" data-aos="fade-up">
+    <h2 class="section-title">Contact</h2>
+    <p>Let’s connect! You can reach me via email or explore my work on GitHub.</p>
+    <a href="mailto:ndenehchubu@gmail.com" class="btn btn-success"><i class="fa-solid fa-envelope me-2"></i>Email</a>
+    <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-primary"><i class="fab fa-github me-2"></i>GitHub</a>
   </section>
 
-  <footer>
+  <!-- Footer -->
+  <footer class="text-white text-center py-3 mt-5">
     <p>&copy; 2026 Ndenneh Chubu. All Rights Reserved.</p>
   </footer>
 
-  <a href="#" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+  <!-- Back to top -->
+  <a href="#" class="btn back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
@@ -303,4 +212,5 @@
     }
   </script>
 </body>
+
 </html>
