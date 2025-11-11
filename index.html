@@ -9,19 +9,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <style>
+    /* Theme variables */
     :root {
       --primary-color: #0d6efd;
-      --dark-bg: #121212;
       --light-bg: #f8f9fa;
+      --dark-bg: #121212;
       --text-color: #000000;
       --dark-text: #ffffff;
       --card-bg: #f1f1f1;
     }
 
     [data-theme="dark"] {
-      --text-color: var(--dark-text);
       --bg-color: var(--dark-bg);
       --card-bg: #1f1f1f;
+      --text-color: var(--dark-text);
     }
 
     body {
@@ -54,6 +55,7 @@
       margin-bottom: 40px;
       text-align: center;
       font-weight: 600;
+      color: var(--text-color);
     }
 
     .card {
@@ -63,6 +65,7 @@
       margin-bottom: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      color: var(--text-color);
     }
 
     .card:hover {
@@ -97,6 +100,30 @@
 
     footer a:hover {
       color: var(--primary-color);
+    }
+
+    /* Dark mode overrides for tables, list groups, cards, and nav */
+    [data-theme="dark"] .card,
+    [data-theme="dark"] .list-group-item,
+    [data-theme="dark"] .table th,
+    [data-theme="dark"] .table td,
+    [data-theme="dark"] .navbar,
+    [data-theme="dark"] nav .nav-link {
+      background-color: var(--card-bg) !important;
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="dark"] .table-dark {
+      background-color: #1f1f1f !important;
+      color: var(--text-color) !important;
+    }
+
+    [data-theme="dark"] a {
+      color: #66b2ff;
+    }
+
+    [data-theme="dark"] a:hover {
+      color: #0d6efd;
     }
   </style>
 </head>
@@ -151,14 +178,10 @@
     <h2 class="section-title">Education</h2>
     <div class="row">
       <div class="col-md-6">
-        <div class="card">
-          <i class="fa-solid fa-graduation-cap me-2"></i>B.Sc. Computer Science, Baku State University
-        </div>
+        <div class="card"><i class="fa-solid fa-graduation-cap me-2"></i>B.Sc. Computer Science, Baku State University</div>
       </div>
       <div class="col-md-6">
-        <div class="card">
-          <i class="fa-solid fa-graduation-cap me-2"></i>Bachelor of Computer Applications, Amity University
-        </div>
+        <div class="card"><i class="fa-solid fa-graduation-cap me-2"></i>Bachelor of Computer Applications, Amity University</div>
       </div>
     </div>
   </section>
@@ -225,6 +248,11 @@
       </div>
       <div class="col-md-6 mt-3">
         <div class="card"><i class="fa-solid fa-shield me-2"></i>Cybersecurity Intern | The Red Users</div>
+      </div>
+      <div class="col-md-12 mt-3">
+        <div class="card"><i class="fa-solid fa-server me-2"></i>Backend Engineer | NAFA Financial Services (Oct 2025 - Present) <br>
+          Developing APIs for interoperability with microservices, ensuring clean code, and meeting customer needs.
+        </div>
       </div>
     </div>
   </section>
@@ -305,7 +333,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // AOS initialization
     AOS.init({ once: true });
 
     // Theme toggle
