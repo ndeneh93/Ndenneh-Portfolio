@@ -8,30 +8,144 @@
   <title>Ndenneh Chubu's Portfolio</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./Portfolio.css" />
-  <link rel="icon" href="./images/favicon.ico" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="icon" href="./images/favicon.ico" />
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --primary-color: #0d6efd;
+      --secondary-color: #6c757d;
+      --light-bg: #f8f9fa;
+      --dark-bg: #121212;
+      --dark-text: #ffffff;
+      --card-bg: #f1f1f1;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: var(--dark-bg);
+      --text-color: var(--dark-text);
+      --card-bg: #1f1f1f;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary-color);
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    h2 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .experience-item,
+    .education-item {
+      margin-bottom: 30px;
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card,
+    .certification-card,
+    .award-card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover,
+    .certification-card:hover,
+    .award-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+
+    .btn-light {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: none;
+    }
+
+    .theme-toggle {
+      z-index: 1000;
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: var(--dark-text);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--dark-text);
+      margin: 0 10px;
+      font-size: 1.5rem;
+    }
+
+    footer a:hover {
+      color: var(--primary-color);
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Header Section -->
   <header class="bg-primary text-white py-5">
-    <div class="container">
-      <button id="theme-toggle" class="btn position-fixed top-0 end-0 m-3 theme-toggle" onclick="toggleTheme()"
-        aria-label="Toggle dark mode">
+    <div class="container text-center">
+      <button id="theme-toggle" class="btn btn-light position-absolute top-0 end-0 m-3 theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
         <i class="fas fa-moon"></i>
       </button>
-      <div class="profile-header text-center">
-        <img src="cboy.jpg" alt="Ndenneh Chubu" class="profile-pic img-fluid rounded-circle shadow mb-4"
-          onerror="this.onerror=null; this.src='https://via.placeholder.com/200';" />
-      </div>
-      <h1 class="display-4 text-center mb-3">Ndenneh Chubu</h1>
-      <p class="lead text-center">
-    <span class="badge bg-light text-primary me-2">BS in Computer Science - Baku State University</span>
-    <span class="badge bg-light text-primary me-2">BCA - Amity University</span>
-      </p>
-</p>
-
+      <img src="cboy.jpg" alt="Ndenneh Chubu" class="profile-pic rounded-circle shadow mb-3"
+        onerror="this.src='https://via.placeholder.com/200';" />
+      <h1 class="display-4 mb-2">Ndenneh Chubu</h1>
+      <p class="lead mb-3">Full-Stack Developer | Cybersecurity Enthusiast | IT Specialist</p>
+      <a href="#projects" class="btn btn-light btn-lg">View My Work</a>
     </div>
 
     <nav>
@@ -40,71 +154,89 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#languages">Languages</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="about">
+  <!-- About Section -->
+  <section id="about" class="bg-light">
     <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am an IT Support Specialist with extensive hands-on experience in computer networks, cybersecurity, and their
-        practical applications. I am passionate about web development and possess strong problem-solving skills.
-        Additionally, I thrive on continuous learning and remain committed to staying current with the latest industry
-        trends and emerging technologies.
-      </p>
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2>About Me</h2>
+          <p>I am an IT Support Specialist with hands-on experience in computer networks, cybersecurity, and web development. Passionate about problem-solving and continuous learning, I strive to implement secure, functional, and user-friendly web solutions.</p>
+          <p>
+            <span class="badge bg-primary me-2">Web Development</span>
+            <span class="badge bg-success me-2">Cybersecurity</span>
+            <span class="badge bg-warning text-dark">Networking</span>
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="cboy.jpg" alt="Ndenneh Chubu" class="img-fluid rounded shadow"/>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Skills Section -->
   <section id="skills">
     <div class="container">
       <h2>Skills</h2>
-
-      <div class="skills-content">
-        <div class="skill-category">
-          <h3>Technical Skills</h3>
-          <ul>
-            <li>Frontend Development (HTML, CSS, JavaScript)</li>
-            <li>IT Support and Troubleshooting</li>
-            <li>Network Administration</li>
-            <li>Data Analysis</li>
-          </ul>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <h4>Technical Skills</h4>
+          <div class="mb-2">Frontend (HTML/CSS/JS)</div>
+          <div class="progress mb-3"><div class="progress-bar bg-primary" style="width:85%">85%</div></div>
+          <div class="mb-2">IT Support & Troubleshooting</div>
+          <div class="progress mb-3"><div class="progress-bar bg-success" style="width:90%">90%</div></div>
+          <div class="mb-2">Networking</div>
+          <div class="progress mb-3"><div class="progress-bar bg-warning" style="width:80%">80%</div></div>
+          <div class="mb-2">Data Analysis</div>
+          <div class="progress mb-3"><div class="progress-bar bg-info" style="width:75%">75%</div></div>
         </div>
-
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Project Management</li>
-            <li>Team Leadership</li>
-            <li>Problem Solving</li>
-            <li>Communication</li>
+        <div class="col-md-6 mb-4">
+          <h4>Soft Skills</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Project Management</li>
+            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Team Leadership</li>
+            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Problem Solving</li>
+            <li class="list-group-item"><i class="fas fa-check-circle me-2 text-success"></i>Communication</li>
           </ul>
-        </div>
-
-        <div class="skill-description">
-
         </div>
       </div>
+    </div>
   </section>
 
-  <section id="experience">
+  <!-- Experience Section -->
+  <section id="experience" class="bg-light">
     <div class="container">
       <h2>Experience</h2>
+
+      <div class="experience-item">
+        <h3>Backend Engineer</h3>
+        <p>NAFA Financial Services, Kairaba Avenue, The Gambia | October 2025 – Present</p>
+        <ul>
+          <li>Develop APIs enabling seamless interoperability with the company’s microservices architecture.</li>
+          <li>Ensure clean, maintainable, and standard-compliant code.</li>
+          <li>Collaborate with the team to meet customer needs effectively and efficiently.</li>
+        </ul>
+      </div>
+
       <div class="experience-item">
         <h3>IT Support Specialist</h3>
-        <p>Company XYZ, 2018 - Present</p>
+        <p>Company XYZ | 2018 - Present</p>
         <ul>
           <li>Provided technical support and troubleshooting for end-users.</li>
           <li>Managed and maintained computer networks and systems.</li>
           <li>Implemented cybersecurity measures to protect company data.</li>
         </ul>
       </div>
+
       <div class="experience-item">
         <h3>Web Developer Intern</h3>
-        <p>Company ABC, 2017 - 2018</p>
+        <p>Company ABC | 2017 - 2018</p>
         <ul>
           <li>Assisted in the development and maintenance of company websites.</li>
           <li>Collaborated with the design team to create user-friendly interfaces.</li>
@@ -114,6 +246,7 @@
     </div>
   </section>
 
+  <!-- Education Section -->
   <section id="education">
     <div class="container">
       <h2>Education</h2>
@@ -128,204 +261,64 @@
     </div>
   </section>
 
-  <section id="languages">
+  <!-- Projects Section -->
+  <section id="projects" class="bg-dark text-white">
     <div class="container">
-      <h2>Languages</h2>
-      <ul>
-        <li>English (Fluent)</li>
-        <li>French (Intermediate)</li>
-        <li>Spanish (Basic)</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="certification-grid">
-        <div class="certification-item">
-          <i class="fas fa-cloud"></i>
-          <h3>Cloud Computing</h3>
-          <p>Understanding Core Concepts</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>CISCO Networking Academy</h3>
-          <p>Cybersecurity Essentials</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-award"></i>
-          <h3>YALI RLC West Africa</h3>
-          <p>Emerging Leaders Scholar</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-user-shield"></i>
-          <h3>IT Support Specialist</h3>
-          <p>Professional Certification</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-globe-africa"></i>
-          <h3>Youth Delegate</h3>
-          <p>COY19 & UNFCCC COP29</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-file-excel"></i>
-          <h3>Amity University </h3>
-          <p>Advanced Excel</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-server"></i>
-          <h3>Coursera </h3>
-          <p>System Administration</p>
-        </div>
-
-        <div class="certification-item">
-          <i class="fas fa-shield-virus"></i>
-          <h3> CISCO Networking Academy</h3>
-          <p>Cyber Threat Management</p>
+      <h2>Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="project-card">
+            <img src="project-screenshot.png" class="img-fluid rounded mb-3" alt="Security Project">
+            <h5>Security & Privacy Research</h5>
+            <p>Enhanced cybersecurity measures and privacy protocols. Implemented robust security frameworks and data protection strategies.</p>
+            <a href="Amity Project.pdf" target="_blank" class="btn btn-light btn-sm"><i class="fas fa-book-reader me-2"></i>Documentation</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="awards">
-    <div class="container">
-      <h2>Awards</h2>
-      <div class="awards-grid">
-        <div class="award-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Indian Government Scholarship</h3>
-          <p>Bachelor's degree </p>
-        </div>
-
-        <div class="award-item">
-          <i class="fas fa-users"></i>
-          <h3>YALI RLC</h3>
-          <p>Emerging Leaders Program </p>
-        </div>
-
-        <div class="award-item">
-          <i class="fas fa-leaf"></i>
-          <h3>UNFCCC Climate Conference </h3>
-          <p>COY19 & COP29</p>
-        </div>
-
-        <div class="award-item">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>Azerbaijan Government Scholarship</h3>
-          <p>Bachelor's degree</p>
-        </div>
-        <div class="award-item">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Ingressive for Good Scholarship</h3>
-          <p>Cybersecurity </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2>Research Project</h2>
-      <div class="project">
-        <h3>Security and Privacy </h3>
-        <p>Research project focused on enhancing cybersecurity measures and privacy protocols in our online activities
-          and implemented robust security frameworks and data protection strategies.</p>
-        <div class="project-links">
-          <a href="Amity Project.pdf" target="_blank">
-            <i class="fas fa-book-reader"></i> Documentation
-          </a>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
+  <!-- Contact Section -->
+  <section id="contact" class="bg-light">
+    <div class="container text-center">
       <h2>Contact</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+994507879269">+994 50 787 92 69</a>
-
-        </div>
-
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a>
-
-        </div>
-        <!-- Add CV Download Section -->
-        <div class="cv-section text-center mt-4">
-          <a href="Ndenneh Chubu_CV.pdf" class="btn btn-light btn-lg" download="Ndenneh_Chubu_CV.pdf" target="_blank">
-            <i class="fas fa-file-download me-2"></i>
-            Download CV
-          </a>
-
-        </div>
-      </div>
+      <p><i class="fas fa-phone me-2"></i><a href="tel:+994507879269">+994 50 787 92 69</a></p>
+      <p><i class="fas fa-envelope me-2"></i><a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
+      <a href="Ndenneh Chubu_CV.pdf" class="btn btn-primary btn-lg mt-3" download="Ndenneh_Chubu_CV.pdf"><i class="fas fa-file-download me-2"></i>Download CV</a>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="social-links mb-4">
-        <a href="https://www.linkedin.com/in/ndenneh-chubu" target="_blank" class="social-icon">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://www.researchgate.net/Ndenneh-Chubu-2" target="_blank" class="social-icon">
-          <i class="fab fa-researchgate"></i>
-        </a>
-        <a href="https://github.com/ndeneh93" target="_blank" class="social-icon">
-          <i class="fab fa-github"></i>
-        </a>
+      <div class="mb-3">
+        <a href="https://www.linkedin.com/in/ndenneh-chubu" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.researchgate.net/Ndenneh-Chubu-2" target="_blank"><i class="fab fa-researchgate"></i></a>
+        <a href="https://github.com/ndeneh93" target="_blank"><i class="fab fa-github"></i></a>
       </div>
-
-      <p>Made with <i class="fas fa-heart heart-icon"></i> by Ndenneh Chubu</p>
-      <p>&copy; 2025 <br>All rights reserved.</p>
+      <p>Made with <i class="fas fa-heart text-danger"></i> by Ndenneh Chubu</p>
+      <p>&copy; 2025 All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./Portfolio.js"></script>
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      if (current === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+    });
+  </script>
 </body>
-
 </html>
-
-<style>
-.project h3 {
-    color: #ffffff;
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.project p {
-    color: #ffffff;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin: 20px 0;
-    padding: 0 20px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-[data-theme="dark"] .project p {
-    color: #ffffff;
-    opacity: 0.9;
-}
-
-[data-theme="dark"] .project h3 {
-    color: #ffffff;
-    opacity: 1;
-}
-</style>
-
