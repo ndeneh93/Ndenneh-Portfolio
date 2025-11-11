@@ -33,7 +33,7 @@
     }
 
     body {
-      background: var(--secondary);
+      background: linear-gradient(to right, var(--secondary), #e0f7fa);
       color: var(--text-color);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       transition: all 0.3s ease;
@@ -42,29 +42,31 @@
     a {
       color: var(--primary);
       text-decoration: none;
-      transition: color 0.3s;
     }
 
     a:hover {
       color: var(--accent);
-      text-decoration: none;
+      text-decoration: underline;
     }
 
     header {
       padding: 60px 20px;
-      background: linear-gradient(135deg, #1f7a8c, #f26b38);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
       color: white;
       text-align: center;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
     header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
+      font-size: 3rem;
       margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 500;
     }
 
@@ -72,6 +74,7 @@
       color: #fff;
       font-weight: 500;
       margin: 0 10px;
+      transition: color 0.3s;
     }
 
     .navbar-nav .nav-link:hover {
@@ -79,21 +82,22 @@
     }
 
     .section-title {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      color: var(--text-color);
       position: relative;
     }
 
     .section-title::after {
       content: '';
-      width: 80px;
-      height: 4px;
-      background: var(--accent);
       display: block;
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
       margin: 10px auto 0;
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     .profile-pic {
@@ -102,28 +106,28 @@
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid var(--primary);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
 
     .card {
       background-color: var(--card-bg);
       color: var(--text-color);
       border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
     }
 
     .timeline-card {
       position: relative;
       padding-left: 50px;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
 
     .timeline-card::before {
@@ -145,11 +149,17 @@
       color: var(--primary);
       background: var(--card-bg);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    .project-links a {
+      margin-right: 10px;
+      margin-top: 10px;
+      display: inline-block;
     }
 
     #theme-toggle {
@@ -181,24 +191,38 @@
       height: 50px;
       background: var(--primary);
       color: white;
-      font-size: 1.2rem;
       text-decoration: none;
+      font-size: 1.2rem;
     }
 
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-      }
+    /* Skills Circle */
+    .circular-chart {
+      display: block;
+      margin: 0 auto;
+      max-width: 100px;
+      max-height: 100px;
+      transform: rotate(-90deg);
+    }
 
-      header h1 {
-        font-size: 2rem;
-      }
+    .circle-bg {
+      fill: none;
+      stroke: #eee;
+      stroke-width: 3.8;
+    }
 
-      .section-title {
-        font-size: 1.7rem;
-      }
+    .circle {
+      fill: none;
+      stroke: var(--primary);
+      stroke-width: 3.8;
+      stroke-linecap: round;
+      transition: stroke-dasharray 1s ease-out;
+    }
+
+    .percentage {
+      fill: var(--text-color);
+      font-family: sans-serif;
+      font-size: 0.5em;
+      text-anchor: middle;
     }
   </style>
 </head>
@@ -228,7 +252,8 @@
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
           <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#internship">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internship">Internship</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -285,6 +310,16 @@
           <h5>e-VBAB India Government Scholarship</h5>
         </div>
       </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>Emerging Leaders Program YALI Cohort 14</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>ICCR India Government Scholarship</h5>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -304,25 +339,106 @@
       </div>
       <div class="col-md-4">
         <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
-          <h5>GraphQL with Apollo Server & TypeScript</h5>
+          <h5>Introduction to Cybersecurity</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Introduction to Cloud Computing</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Cyber Threat Management</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>GraphQL with Apollo Server, TypeScript & Express</h5>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
+  <!-- Internship & Experience -->
   <section id="internship" class="container mt-5" data-aos="fade-up">
-    <h2 class="section-title">Experience</h2>
+    <h2 class="section-title">Internship & Experience</h2>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-briefcase"></i></span>
-      <h5>Backend Engineer | NAFA Financial Services</h5>
+      <h5>Backend Engineer | NAFA Financial Services, The Gambia</h5>
       <small class="text-muted">October 2025 – Present</small>
-      <p>Develop APIs, manage microservices, and optimize backend systems for financial applications.</p>
+      <p>Develop APIs for microservices, ensure clean code and coding standards, and fulfill customer needs
+        efficiently.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
+      <h5>Front-End Developer | SaiKet Systems</h5>
+      <p>Worked on front-end development tasks using HTML, CSS, JavaScript.</p>
     </div>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
       <h5>Full-Stack Developer | CodeAlpa</h5>
-      <p>Built full-stack features using modern frameworks and technologies.</p>
+      <p>Developed full-stack features using modern frameworks.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-shield"></i></span>
+      <h5>Cybersecurity Intern | The Red Users</h5>
+      <p>Learned cybersecurity protocols and implemented security practices.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Skills</h2>
+    <div class="row g-4 justify-content-center text-center">
+      <div class="col-6 col-md-3">
+        <div class="skill-circle" data-percentage="90">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="circle" stroke-dasharray="90,100"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <text x="18" y="20.35" class="percentage">90%</text>
+          </svg>
+          <p class="mt-2">Node.js</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-circle" data-percentage="85">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="circle" stroke-dasharray="85,100"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <text x="18" y="20.35" class="percentage">85%</text>
+          </svg>
+          <p class="mt-2">TypeScript</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-circle" data-percentage="80">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="circle" stroke-dasharray="80,100"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <text x="18" y="20.35" class="percentage">80%</text>
+          </svg>
+          <p class="mt-2">GraphQL</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="skill-circle" data-percentage="75">
+          <svg viewBox="0 0 36 36" class="circular-chart">
+            <path class="circle-bg"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <path class="circle" stroke-dasharray="75,100"
+              d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+            <text x="18" y="20.35" class="percentage">75%</text>
+          </svg>
+          <p class="mt-2">Docker</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -335,10 +451,34 @@
           <h5><i class="fa-solid fa-laptop-code me-2"></i>Portfolio Website</h5>
           <p>Personal portfolio using HTML, CSS, JavaScript.</p>
           <div class="project-links mt-2">
-            <a href="https://github.com/ndeneh93/portfolio" target="_blank"
-              class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i>GitHub</a>
-            <a href="https://ndenneh-portfolio.vercel.app/" target="_blank"
-              class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i>Live Demo</a>
+            <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="https://ndenneh-portfolio.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-clipboard-question me-2"></i>Quiz Application</h5>
+          <p>Multiple-choice quiz app using JavaScript.</p>
+          <div class="project-links mt-2">
+            <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-list-check me-2"></i>To-Do List App</h5>
+          <p>Task management app using JavaScript.</p>
+          <div class="project-links mt-2">
+            <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
           </div>
         </div>
       </div>
