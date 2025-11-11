@@ -22,6 +22,8 @@
       --text-color: #212529;
       --card-bg: #ffffff;
       --accent: #f26b38;
+      --gradient-start: #1f7a8c;
+      --gradient-end: #f26b38;
     }
 
     [data-theme="dark"] {
@@ -30,6 +32,8 @@
       --text-color: #f4f4f9;
       --card-bg: #1e1e1e;
       --accent: #f26b38;
+      --gradient-start: #1f7a8c;
+      --gradient-end: #f26b38;
     }
 
     body {
@@ -51,18 +55,20 @@
 
     header {
       padding: 60px 20px;
-      background: var(--primary);
+      background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
       color: white;
       text-align: center;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 10px;
+      font-weight: 700;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      font-weight: 500;
     }
 
     .navbar-nav .nav-link {
@@ -78,10 +84,21 @@
 
     .section-title {
       font-size: 2rem;
-      font-weight: 600;
+      font-weight: 700;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: var(--text-color);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+      margin: 10px auto 0;
+      border-radius: 2px;
     }
 
     .profile-pic {
@@ -90,22 +107,24 @@
       object-fit: cover;
       border-radius: 50%;
       border: 5px solid var(--primary);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
 
     .card {
-      background-color: var(--card-bg);
+      background: linear-gradient(to bottom right, var(--card-bg), var(--secondary));
       color: var(--text-color);
       border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      padding: 25px;
       margin-bottom: 20px;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+      background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+      color: #fff;
     }
 
     .timeline-card {
@@ -133,17 +152,28 @@
       color: var(--primary);
       background: var(--card-bg);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all 0.3s;
+    }
+
+    .timeline-card:hover .timeline-icon {
+      color: #fff;
+      background: var(--accent);
     }
 
     .project-links a {
       margin-right: 10px;
       margin-top: 10px;
       display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .project-links a:hover {
+      transform: translateY(-3px);
     }
 
     #theme-toggle {
@@ -161,6 +191,11 @@
       justify-content: center;
       cursor: pointer;
       z-index: 1000;
+      transition: background 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background: var(--accent);
     }
 
     .back-to-top {
@@ -177,6 +212,11 @@
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .back-to-top:hover {
+      background: var(--accent);
     }
   </style>
 </head>
@@ -224,8 +264,68 @@
       internationally.</p>
   </section>
 
-  <!-- Education, Awards, Certifications, Internship, Projects, Contact, Footer -->
-  <!-- Keep the rest of your sections unchanged -->
+  <!-- Education Section -->
+  <section id="education" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Education</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-5">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-graduation-cap me-2"></i>B.Sc. Computer Science</h5>
+          <p>Baku State University</p>
+          <small class="text-muted">2021 - 2025</small>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-graduation-cap me-2"></i>Bachelor of Computer Applications</h5>
+          <p>Amity University</p>
+          <small class="text-muted">2020 - 2023</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section id="awards" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Awards</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>Azerbaijan Government Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>I4G CISCO Cybersecurity Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>e-VBAB India Government Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>Emerging Leaders Program YALI Cohort 14</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>ICCR India Government Scholarship</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add Certifications, Internship, Projects, Contact sections as before, using gradient cards and hover effects -->
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2026 Ndenneh Chubu. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#" class="btn back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
