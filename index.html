@@ -1,279 +1,420 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ndenneh Chubu | Portfolio</title>
+<html lang="en">
 
-  <!-- Libraries -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Ndenneh Chubu">
+  <title>Ndenneh Chubu - Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- AOS animations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 
   <style>
-    /* ===== Root Theme Colors ===== */
+    /* Color Palette */
     :root {
-      --primary: #009688;
-      --accent: #00c9a7;
-      --bg-light: #f7f9fc;
-      --bg-dark: #0a192f;
-      --text-dark: #1e1e2f;
-      --text-light: #eaeaea;
-      --gradient-light: linear-gradient(135deg, #d0f0ec, #e8f8f5);
-      --gradient-dark: linear-gradient(135deg, #0a192f, #172a45);
+      --primary: #1f7a8c; /* muted teal */
+      --secondary: #f4f4f9; /* light gray background */
+      --text-color: #212529;
+      --card-bg: #ffffff;
+      --accent: #f26b38; /* highlight color */
     }
 
-    /* ===== Base Styles ===== */
-    body {
-      font-family: "Inter", sans-serif;
-      background: var(--gradient-light);
-      color: var(--text-dark);
-      transition: background 0.6s ease, color 0.6s ease;
-      scroll-behavior: smooth;
-    }
     [data-theme="dark"] {
-      background: var(--gradient-dark);
-      color: var(--text-light);
+      --primary: #1f7a8c;
+      --secondary: #121212;
+      --text-color: #f4f4f9;
+      --card-bg: #1e1e1e;
+      --accent: #f26b38;
     }
 
-    h1, h2, h3, h5 {
-      font-family: "Poppins", sans-serif;
-      font-weight: 600;
+    body {
+      background-color: var(--secondary);
+      color: var(--text-color);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    header {
+      padding: 60px 20px;
+      background: var(--primary);
+      color: white;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-weight: 500;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--accent);
     }
 
     .section-title {
+      font-size: 2rem;
+      font-weight: 600;
       text-align: center;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      color: var(--primary);
-    }
-    [data-theme="dark"] .section-title { color: var(--accent); }
-
-    /* ===== Navbar ===== */
-    .navbar {
-      background: linear-gradient(90deg, #00796b, #004d40);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: background 0.5s ease;
-    }
-    [data-theme="dark"] .navbar {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-    }
-    .navbar-brand {
-      font-weight: 700;
-      letter-spacing: 1px;
-      font-size: 1.3rem;
-    }
-    .nav-link {
-      color: #f1f1f1 !important;
-      margin: 0 8px;
-      transition: color 0.3s ease;
-    }
-    .nav-link:hover {
-      color: var(--accent) !important;
+      margin-bottom: 30px;
+      color: var(--text-color);
     }
 
-    /* ===== Header ===== */
-    header {
-      background: linear-gradient(135deg, rgba(0,150,136,0.9), rgba(0,201,167,0.7)), url('header-bg.jpg') center/cover fixed;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      animation: fadeIn 1.2s ease-out;
-    }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
-    /* ===== Cards ===== */
     .card {
-      border: none;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      padding: 20px;
+      margin-bottom: 20px;
     }
-    [data-theme="dark"] .card {
-      background: rgba(20,29,46,0.9);
-      box-shadow: 0 4px 15px rgba(255,255,255,0.05);
-    }
+
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
     }
 
-    /* ===== Buttons ===== */
-    .btn {
-      border-radius: 8px;
-      transition: transform 0.2s, background 0.3s;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
+    .timeline-card {
+      position: relative;
+      padding-left: 50px;
+      margin-bottom: 30px;
     }
 
-    /* ===== Section Dividers ===== */
-    .section-divider {
-      height: 100px;
-      background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.05));
-    }
-    [data-theme="dark"] .section-divider {
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.05));
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background-color: var(--primary);
+      border-radius: 5px;
     }
 
-    /* ===== Back to Top ===== */
-    .back-to-top {
+    .timeline-card .timeline-icon {
+      position: absolute;
+      left: 10px;
+      top: 0;
+      font-size: 1.5rem;
+      color: var(--primary);
+      background: var(--card-bg);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .project-links a {
+      margin-right: 10px;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    #theme-toggle {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
+      top: 20px;
+      right: 20px;
       background: var(--primary);
+      border: none;
       color: #fff;
       border-radius: 50%;
-      padding: 12px 14px;
-      display: none;
-      transition: 0.4s ease;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
     }
-    .back-to-top:hover { transform: scale(1.1); }
 
-    /* ===== Footer ===== */
-    footer {
-      background: linear-gradient(90deg, #004d40, #00796b);
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
       color: white;
-      padding: 20px;
-    }
-    [data-theme="dark"] footer {
-      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      text-decoration: none;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 
-<body>
+<body data-theme="light">
+  <!-- Dark mode toggle -->
+  <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <h1>Ndenneh Chubu</h1>
+    <p>Backend Engineer at NAFA Financial Services, The Gambia</p>
+  </header>
+
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary);">
     <div class="container">
-      <a class="navbar-brand" href="#">Ndenneh Chubu</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#internship">Internship</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item ms-3">
-            <button class="btn btn-outline-light" id="theme-toggle" onclick="toggleTheme()">
-              <i class="fa-solid fa-moon"></i>
-            </button>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Header -->
-  <header>
-    <h1 data-aos="fade-down">Ndenneh Chubu</h1>
-    <p data-aos="fade-up">Backend Engineer | Node.js | GraphQL | TypeScript | Docker | AWS</p>
-  </header>
-
   <!-- About -->
-  <section id="about" class="container mt-5 text-center" data-aos="fade-up">
-    <h2 class="section-title">About Me</h2>
-    <p class="lead">I am a Backend Engineer at NAFA Financial Services, The Gambia, specializing in building scalable, secure APIs and microservices. I focus on clean code, performance optimization, and modern architectures that ensure reliability and interoperability across systems.</p>
+  <section id="about" class="container text-center mt-5" data-aos="fade-up">
+    <img src="Ndenneh Chubu.jpg" alt="Ndenneh Chubu" class="profile-pic mb-3">
+    <p class="lead text-muted">Welcome to my Portfolio</p>
+    <p>I am a Backend Engineer at NAFA Financial Services in The Gambia. I build scalable and secure backend systems
+      using Node.js, TypeScript, GraphQL, Apollo Server, Docker, and AWS. I focus on clean architecture, system
+      optimization, and innovative, data-driven financial services that empower users both nationally and
+      internationally.</p>
   </section>
-
-  <div class="section-divider"></div>
 
   <!-- Education -->
   <section id="education" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Education</h2>
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card p-4 text-center">
-          <h5>B.Sc. Computer Science</h5>
-          <p>Baku State University | 2021 – 2025</p>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-5">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-graduation-cap me-2"></i>B.Sc. Computer Science</h5>
+          <p>Baku State University</p>
+          <small class="text-muted">2021 - 2025</small>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card p-4 text-center">
-          <h5>Bachelor of Computer Applications</h5>
-          <p>Amity University | 2020 – 2023</p>
+      <div class="col-md-5">
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-graduation-cap me-2"></i>Bachelor of Computer Applications</h5>
+          <p>Amity University</p>
+          <small class="text-muted">2020 - 2023</small>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
+  <!-- Awards -->
+  <section id="awards" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Awards</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>Azerbaijan Government Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>I4G CISCO Cybersecurity Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>e-VBAB India Government Scholarship</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>Emerging Leaders Program YALI Cohort 14</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-award fa-2x mb-2"></i>
+          <h5>ICCR India Government Scholarship</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Certifications</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Google IT Support Professional</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>CCSK v4.1 Foundation Training</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Introduction to Cybersecurity</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Introduction to Cloud Computing</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>Cyber Threat Management</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center"><i class="fa-solid fa-certificate fa-2x mb-2"></i>
+          <h5>GraphQL with Apollo Server, TypeScript & Express</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internship & Experience -->
+  <section id="internship" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Internship & Experience</h2>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-briefcase"></i></span>
+      <h5>Backend Engineer | NAFA Financial Services, The Gambia</h5>
+      <small class="text-muted">October 2025 – Present</small>
+      <p>Develop APIs for microservices, ensure clean code and coding standards, and fulfill customer needs
+        efficiently.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
+      <h5>Front-End Developer | SaiKet Systems</h5>
+      <p>Worked on front-end development tasks using HTML, CSS, JavaScript.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
+      <h5>Full-Stack Developer | CodeAlpa</h5>
+      <p>Developed full-stack features using modern frameworks.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-shield"></i></span>
+      <h5>Cybersecurity Intern | The Red Users</h5>
+      <p>Learned cybersecurity protocols and implemented security practices.</p>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
     <div class="row g-4 justify-content-center">
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>Portfolio Website</h5>
-          <p>Personal portfolio showcasing my professional background and projects.</p>
-          <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
-          <a href="https://ndenneh-portfolio.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-laptop-code me-2"></i>Portfolio Website</h5>
+          <p>Personal portfolio using HTML, CSS, JavaScript.</p>
+          <div class="project-links mt-2">
+            <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="https://ndenneh-portfolio.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>Quiz Application</h5>
-          <p>Dynamic JavaScript quiz with multiple-choice questions and scoring system.</p>
-          <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
-          <a href="https://quiz-app.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-clipboard-question me-2"></i>Quiz Application</h5>
+          <p>Multiple-choice quiz app using JavaScript.</p>
+          <div class="project-links mt-2">
+            <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="card p-4 text-center">
-          <h5>To-Do List App</h5>
-          <p>Simple task manager using local storage with clean, responsive design.</p>
-          <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i class="fab fa-github me-1"></i> GitHub</a>
-          <a href="https://todo-app.vercel.app/" target="_blank" class="btn btn-outline-success btn-sm"><i class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+        <div class="card text-center">
+          <h5><i class="fa-solid fa-list-check me-2"></i>To-Do List App</h5>
+          <p>Task management app using JavaScript.</p>
+          <div class="project-links mt-2">
+            <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
+                class="fab fa-github me-1"></i> GitHub</a>
+            <a href="#" target="_blank" class="btn btn-outline-success btn-sm"><i
+                class="fas fa-external-link-alt me-1"></i> Live Demo</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="section-divider"></div>
-
   <!-- Contact -->
-  <section id="contact" class="container mt-5 mb-5 text-center" data-aos="fade-up">
-    <h2 class="section-title">Contact</h2>
-    <p>Let’s connect! You can reach me via email or explore my work below.</p>
-    <a href="mailto:ndenehchubu@gmail.com" class="btn btn-success me-2"><i class="fa-solid fa-envelope me-2"></i>Email</a>
-    <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-primary"><i class="fab fa-github me-2"></i>GitHub</a>
+  <section id="contact" class="container mt-5 text-center" data-aos="fade-up">
+    <h2 class="section-title">Contact Me</h2>
+    <form action="https://formspree.io/f/meoaqgag" method="POST" class="mb-4">
+      <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" required></div>
+      <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
+      <div class="mb-3"><textarea class="form-control" name="message" rows="3" placeholder="Message"
+          required></textarea></div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+    <p><i class="fa fa-envelope"></i> <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
+    <p><i class="fa fa-phone"></i> <a href="tel:+994507879269">+994 50 787 92 69</a></p>
+    <a href="https://www.linkedin.com/in/ndenneh-chubu/" target="_blank" class="btn btn-primary"><i
+        class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i>
+      GitHub</a>
   </section>
 
   <!-- Footer -->
-  <footer class="text-white text-center py-3 mt-5">
+  <footer class="bg-dark text-white text-center py-3 mt-5">
     <p>&copy; 2026 Ndenneh Chubu. All Rights Reserved.</p>
   </footer>
 
-  <!-- Back to Top -->
+  <!-- Back to top -->
   <a href="#" class="btn back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
-
-    const backToTop = document.querySelector(".back-to-top");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
-    });
 
     function toggleTheme() {
       const body = document.body;
@@ -288,4 +429,5 @@
     }
   </script>
 </body>
+
 </html>
