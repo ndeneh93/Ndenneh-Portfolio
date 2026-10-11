@@ -72,7 +72,7 @@ No additional dependencies are required.
 
 ## Live Demo
 
-[View Live Portfolio](https://ndenneh-portfolio.vercel.app/)
+[View Live Portfolio](https://ndeneh93.github.io/Ndenneh-Portfolio/)
 
 ## Contributing
 

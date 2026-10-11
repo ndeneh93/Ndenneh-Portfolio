@@ -34,11 +34,17 @@
       --gradient: linear-gradient(135deg, #1f7a8c, #f26b38);
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--secondary);
       color: var(--text-color);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       transition: all 0.3s ease;
+      background-image: radial-gradient(circle at top, rgba(31, 122, 140, 0.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(242, 107, 56, 0.08), transparent 30%);
     }
 
     a {
@@ -48,36 +54,82 @@
 
     a:hover {
       color: var(--accent);
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     header {
-      padding: 60px 20px;
-      background: var(--gradient);
+      padding: 74px 20px 60px;
+      background: linear-gradient(135deg, rgba(19, 76, 86, 0.98), rgba(31, 122, 140, 0.9), rgba(242, 107, 56, 0.82));
       color: white;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before,
+    header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 0;
+    }
+
+    header::before {
+      width: 360px;
+      height: 360px;
+      top: -120px;
+      left: -80px;
+    }
+
+    header::after {
+      width: 320px;
+      height: 320px;
+      bottom: -120px;
+      right: -60px;
+    }
+
+    header .container {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      font-weight: 700;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin-bottom: 12px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 500;
+      max-width: 760px;
+      margin: 0 auto;
+      letter-spacing: 0.02em;
+      opacity: 0.96;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1020;
+      background: rgba(31, 122, 140, 0.96) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 25px rgba(15, 39, 44, 0.12);
     }
 
     .navbar-nav .nav-link {
       color: #fff;
-      font-weight: 500;
+      font-weight: 600;
       margin: 0 10px;
-      transition: color 0.3s;
+      transition: color 0.3s ease, opacity 0.3s ease;
+      opacity: 0.92;
     }
 
     .navbar-nav .nav-link:hover {
-      color: var(--accent);
+      color: #ffffff;
+      opacity: 1;
     }
 
     .section-title {
@@ -87,6 +139,7 @@
       margin-bottom: 30px;
       color: var(--text-color);
       position: relative;
+      letter-spacing: -0.03em;
     }
 
     .section-title::after {
@@ -113,6 +166,14 @@
       margin: 0 auto;
     }
 
+    .about-wrapper p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(33, 37, 41, 0.88);
+    }
+
     .intro-badges {
       display: flex;
       flex-wrap: wrap;
@@ -132,6 +193,7 @@
       padding: 8px 16px;
       font-size: 0.9rem;
       font-weight: 600;
+      box-shadow: 0 6px 12px rgba(31, 122, 140, 0.06);
     }
 
     .stat-grid {
@@ -139,13 +201,15 @@
     }
 
     .feature-card {
-      min-height: 160px;
+      min-height: 170px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      border: 1px solid rgba(31, 122, 140, 0.12);
+      border: 1px solid rgba(31, 122, 140, 0.15);
+      background: linear-gradient(135deg, rgba(31, 122, 140, 0.03), rgba(255, 255, 255, 0.8));
+      padding: 24px 18px;
     }
 
     .feature-card i {
@@ -159,18 +223,19 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .cta-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 20px;
+      padding: 12px 22px;
       border-radius: 999px;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s ease;
       text-decoration: none;
+      box-shadow: 0 14px 25px rgba(12, 32, 36, 0.18);
     }
 
     .cta-button.primary {
@@ -187,7 +252,22 @@
     .cta-button:hover {
       transform: translateY(-2px);
       text-decoration: none;
-      opacity: 0.96;
+      opacity: 0.98;
+      box-shadow: 0 18px 30px rgba(12, 32, 36, 0.2);
+    }
+
+    .premium-highlight {
+      display: inline-block;
+      margin: 10px auto 18px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(31, 122, 140, 0.09), rgba(242, 107, 56, 0.08));
+      border: 1px solid rgba(31, 122, 140, 0.18);
+      color: var(--text-color);
+      font-weight: 600;
+      max-width: 780px;
+      text-align: center;
+      box-shadow: 0 10px 22px rgba(31, 122, 140, 0.05);
     }
 
     .services-strip {
@@ -195,12 +275,18 @@
     }
 
     .service-item {
-      background: rgba(31, 122, 140, 0.05);
+      background: rgba(31, 122, 140, 0.04);
       border: 1px solid rgba(31, 122, 140, 0.15);
-      border-radius: 12px;
+      border-radius: 14px;
       padding: 18px 14px;
       text-align: center;
       height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(31, 122, 140, 0.08);
     }
 
     .service-item i {
@@ -215,6 +301,7 @@
       border-radius: 18px;
       padding: 24px;
       height: 100%;
+      box-shadow: 0 10px 18px rgba(31, 122, 140, 0.04);
     }
 
     .testimonial-card i {
@@ -227,6 +314,7 @@
       padding: 28px;
       background: linear-gradient(135deg, rgba(31, 122, 140, 0.06), rgba(242, 107, 56, 0.05));
       border: 1px solid rgba(31, 122, 140, 0.15);
+      box-shadow: 0 18px 36px rgba(25, 58, 66, 0.08);
     }
 
     .certificate-image {
@@ -242,48 +330,56 @@
     .card {
       background-color: var(--card-bg);
       color: var(--text-color);
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 18px;
+      box-shadow: 0 10px 20px rgba(15, 35, 40, 0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       padding: 20px;
       margin-bottom: 20px;
+      border: 1px solid rgba(31, 122, 140, 0.08);
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 18px 28px rgba(15, 35, 40, 0.12);
+      border-color: rgba(31, 122, 140, 0.18);
     }
 
     .timeline-card {
       position: relative;
-      padding-left: 50px;
+      padding: 22px 22px 22px 56px;
       margin-bottom: 30px;
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(31, 122, 140, 0.1);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(15, 35, 40, 0.04);
     }
 
     .timeline-card::before {
       content: '';
       position: absolute;
-      left: 20px;
+      left: 22px;
       top: 0;
-      width: 10px;
+      width: 4px;
       height: 100%;
-      background-color: var(--primary);
-      border-radius: 5px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      border-radius: 999px;
     }
 
     .timeline-card .timeline-icon {
       position: absolute;
-      left: 10px;
-      top: 0;
-      font-size: 1.5rem;
+      left: 6px;
+      top: 18px;
+      font-size: 1.2rem;
       color: var(--primary);
       background: var(--card-bg);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 34px;
+      height: 34px;
       display: flex;
       justify-content: center;
       align-items: center;
+      box-shadow: 0 8px 16px rgba(31, 122, 140, 0.12);
+      border: 2px solid rgba(31, 122, 140, 0.12);
     }
 
     .project-links a {
@@ -296,7 +392,7 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background: var(--primary);
+      background: rgba(31, 122, 140, 0.92);
       border: none;
       color: #fff;
       border-radius: 50%;
@@ -307,6 +403,12 @@
       justify-content: center;
       cursor: pointer;
       z-index: 1000;
+      box-shadow: 0 12px 24px rgba(31, 122, 140, 0.2);
+      transition: transform 0.2s ease;
+    }
+
+    #theme-toggle:hover {
+      transform: scale(1.05);
     }
 
     .back-to-top {
@@ -323,10 +425,32 @@
       color: white;
       text-decoration: none;
       font-size: 1.2rem;
+      box-shadow: 0 12px 24px rgba(31, 122, 140, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .progress-bar {
       transition: width 2s ease-in-out;
+    }
+
+    .form-control {
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(31, 122, 140, 0.2);
+      box-shadow: none;
+    }
+
+    .form-control:focus {
+      border-color: rgba(31, 122, 140, 0.5);
+      box-shadow: 0 0 0 0.2rem rgba(31, 122, 140, 0.12);
     }
   </style>
 </head>
@@ -341,7 +465,7 @@
   <header data-aos="fade-down">
     <div class="container">
       <h1>Ndenneh Chubu</h1>
-      <p>Backend Software Engineer • API Systems • Cloud Solutions</p>
+      <p>Backend Software Engineer • API Systems • Scalable Platforms</p>
       <div class="hero-actions">
         <a href="#projects" class="cta-button primary">View Projects</a>
         <a href="#contact" class="cta-button secondary">Hire Me</a>
@@ -360,7 +484,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Tech Stacks</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
           <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
           <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
@@ -377,16 +501,19 @@
     <div class="about-wrapper">
       <img src="The Tech Enthusiast.jpeg" alt="Ndenneh Chubu" class="profile-pic mb-3">
       <h2 class="section-title">About Me</h2>
-      <p>Ndenneh Chubu is a Backend Engineer with a strong focus on building scalable, secure, and high-performing
-        backend systems using Node.js, TypeScript, GraphQL, Apollo Server, Docker, and AWS. He is passionate about
-        clean architecture, system optimization, and creating reliable digital solutions that support financial and
-        technology innovation across local and international communities.</p>
+      <p>Ndenneh Chubu is a Backend Engineer focused on building scalable, secure, and efficient backend systems using
+        Node.js, TypeScript, GraphQL, Apollo Server, Docker, and modern cloud technologies. He enjoys creating clean,
+        reliable architecture and optimizing systems that deliver strong digital experiences for businesses and users.</p>
 
       <div class="intro-badges">
         <span class="badge-pill"><i class="fa-solid fa-server"></i> Backend Systems</span>
         <span class="badge-pill"><i class="fa-solid fa-diagram-project"></i> APIs & Architecture</span>
         <span class="badge-pill"><i class="fa-solid fa-shield-halved"></i> Secure Solutions</span>
-        <span class="badge-pill"><i class="fa-solid fa-cloud"></i> Cloud & DevOps</span>
+      </div>
+
+      <div class="premium-highlight">
+        Building resilient backend systems that power secure digital products, data-driven services, and modern user
+        experiences.
       </div>
 
       <div class="row g-4 stat-grid">
@@ -415,7 +542,7 @@
           <div class="card feature-card">
             <i class="fa-solid fa-cloud-arrow-up"></i>
             <h5>Cloud</h5>
-            <p>Docker, AWS, scalable deployment</p>
+            <p>Docker and scalable deployment</p>
           </div>
         </div>
       </div>
@@ -451,44 +578,24 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Tech Stacks -->
   <section id="skills" class="container mt-5" data-aos="fade-up">
-    <h2 class="section-title">Skills</h2>
+    <h2 class="section-title">Tech Stacks</h2>
     <div class="row g-4 justify-content-center">
-      <div class="col-md-6">
-        <div class="mb-3">
-          <h5>Node.js <span class="float-end">90%</span></h5>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="90"
-              aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <h5>TypeScript <span class="float-end">85%</span></h5>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="85"
-              aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <h5>GraphQL & Apollo <span class="float-end">80%</span></h5>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="80"
-              aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <h5>Docker <span class="float-end">75%</span></h5>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="75"
-              aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <h5>Postgres <span class="float-end">70%</span></h5>
-          <div class="progress" style="height: 10px;">
-            <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="70"
-              aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="col-12">
+        <div class="card">
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <span class="badge-pill">Node.js</span>
+            <span class="badge-pill">TypeScript</span>
+            <span class="badge-pill">GraphQL</span>
+            <span class="badge-pill">Apollo Server</span>
+            <span class="badge-pill">Express</span>
+            <span class="badge-pill">PostgreSQL</span>
+            <span class="badge-pill">MongoDB</span>
+            <span class="badge-pill">Docker</span>
+            <span class="badge-pill">REST APIs</span>
+            <span class="badge-pill">GitHub</span>
+            <span class="badge-pill">CI/CD</span>
           </div>
         </div>
       </div>
