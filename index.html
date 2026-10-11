@@ -209,32 +209,6 @@
       margin-bottom: 10px;
     }
 
-    .stats-grid {
-      margin-top: 28px;
-    }
-
-    .stat-box {
-      background: linear-gradient(135deg, rgba(31, 122, 140, 0.08), rgba(242, 107, 56, 0.08));
-      border: 1px solid rgba(31, 122, 140, 0.12);
-      border-radius: 18px;
-      padding: 26px 18px;
-      text-align: center;
-      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
-    }
-
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
-
-    .stat-label {
-      color: var(--text-color);
-      font-weight: 600;
-      opacity: 0.85;
-    }
-
     .testimonial-card {
       background: linear-gradient(135deg, rgba(31, 122, 140, 0.08), rgba(31, 122, 140, 0.02));
       border: 1px solid rgba(31, 122, 140, 0.14);
@@ -477,37 +451,6 @@
     </div>
   </section>
 
-  <!-- Highlights -->
-  <section class="container mt-5" data-aos="fade-up">
-    <h2 class="section-title">Professional Highlights</h2>
-    <div class="row g-4 stats-grid">
-      <div class="col-md-3">
-        <div class="stat-box">
-          <div class="stat-number" data-target="5">0</div>
-          <div class="stat-label">+ Years Building</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-box">
-          <div class="stat-number" data-target="20">0</div>
-          <div class="stat-label">Projects Delivered</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-box">
-          <div class="stat-number" data-target="8">0</div>
-          <div class="stat-label">Tech Domains</div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="stat-box">
-          <div class="stat-number" data-target="100">0</div>
-          <div class="stat-label">% Focused</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Skills -->
   <section id="skills" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Skills</h2>
@@ -673,25 +616,47 @@
     <h2 class="section-title">Internship & Experience</h2>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-briefcase"></i></span>
-      <h5>Backend Engineer | NAFA Financial Services, The Gambia</h5>
-      <small class="text-muted">October 6th 2025 - April 2026</small>
-      <p>Develop APIs for microservices, ensure clean code and coding standards, and fulfill customer needs
-        efficiently.</p>
+      <h5>Backend Software Engineer | NAFA Financial Services · Contract</h5>
+      <small class="text-muted">Oct 2025 – Apr 2026</small>
+      <p>Developed, maintained, and optimized server-side and standalone applications, APIs, and databases, ensuring
+        performance, scalability, and security for financial service operations. Contributed to modern backend systems
+        that support data-driven service delivery and operational efficiency.</p>
     </div>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
-      <h5>Front-End Developer | SaiKet Systems</h5>
-      <p>Worked on front-end development tasks using HTML, CSS, JavaScript.</p>
+      <h5>Full Stack Software Developer | CodeAlpha · Internship</h5>
+      <small class="text-muted">Mar 2025 – Apr 2025</small>
+      <p>Built intuitive mobile and web applications using Python, Node.js, HTML, CSS, JavaScript, and C++ while
+        strengthening backend and frontend development skills in a practical project-based environment.</p>
     </div>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
-      <h5>Full-Stack Developer | CodeAlpa</h5>
-      <p>Developed full-stack features using modern frameworks.</p>
+      <h5>Full Stack Software Developer | SaiKet Systems · Internship</h5>
+      <small class="text-muted">Mar 2025 – Apr 2025 · 2 mos</small>
+      <p>Developed a portfolio website with homepage, "Projects" section, and contact form featuring JavaScript
+        validation using HTML, CSS, and Bootstrap. Created responsive landing pages for e-commerce sites with
+        interactive features using vanilla JavaScript for form validation and toggle buttons.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-code"></i></span>
+      <h5>Front-End Developer | SaiKet Systems · Internship</h5>
+      <small class="text-muted">Feb 2025 – 1 mo</small>
+      <p>Developed blog post layouts, styled product cards, responsive web pages, quiz applications, and to-do list apps
+        during a remote internship focused on front-end technologies and user interface design.</p>
     </div>
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-shield"></i></span>
-      <h5>Cybersecurity Intern | The Red Users</h5>
-      <p>Learned cybersecurity protocols and implemented security practices.</p>
+      <h5>Cybersecurity Intern | HackTify Cyber Security · Internship</h5>
+      <small class="text-muted">Feb 2025 – Mar 2025 · 2 mos</small>
+      <p>Conducted web security assessments focusing on HTML Injection, Clickjacking, Cross-Site Scripting (XSS), IDOR,
+        CSRF, and SSRF vulnerabilities to identify and mitigate security risks.</p>
+    </div>
+    <div class="timeline-card">
+      <span class="timeline-icon"><i class="fa-solid fa-shield"></i></span>
+      <h5>Cybersecurity Intern | The Red Users · Internship</h5>
+      <small class="text-muted">Feb 2025 – Mar 2025 · 2 mos</small>
+      <p>Implemented network security measures such as configuring firewalls and blocking unauthorized access to ensure
+        data protection and system integrity across network infrastructure.</p>
     </div>
   </section>
 
@@ -824,32 +789,11 @@
     // Animate progress bars on scroll
     const progressBars = document.querySelectorAll('.progress-bar');
     const skillsSection = document.getElementById('skills');
-    const counters = document.querySelectorAll('.stat-number');
 
     function animateProgress() {
       progressBars.forEach(bar => {
         const value = bar.getAttribute('aria-valuenow');
         bar.style.width = value + '%';
-      });
-    }
-
-    function animateCounters() {
-      counters.forEach(counter => {
-        const target = Number(counter.getAttribute('data-target'));
-        let current = 0;
-        const increment = target / 40;
-
-        const updateCounter = () => {
-          current += increment;
-          if (current >= target) {
-            counter.textContent = target + (target === 100 ? '%' : '');
-            return;
-          }
-          counter.textContent = Math.floor(current) + (target === 100 ? '%' : '');
-          requestAnimationFrame(updateCounter);
-        };
-
-        requestAnimationFrame(updateCounter);
       });
     }
 
@@ -869,9 +813,6 @@
       }
     });
 
-    window.addEventListener('load', () => {
-      animateCounters();
-    });
   </script>
 </body>
 
