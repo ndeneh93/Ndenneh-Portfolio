@@ -108,6 +108,163 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
+    .about-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .intro-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 24px 0 18px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(31, 122, 140, 0.08);
+      color: var(--text-color);
+      border: 1px solid rgba(31, 122, 140, 0.25);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .stat-grid {
+      margin-top: 28px;
+    }
+
+    .feature-card {
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 1px solid rgba(31, 122, 140, 0.12);
+    }
+
+    .feature-card i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta-button.primary {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .cta-button.secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      opacity: 0.96;
+    }
+
+    .services-strip {
+      margin-top: 28px;
+    }
+
+    .service-item {
+      background: rgba(31, 122, 140, 0.05);
+      border: 1px solid rgba(31, 122, 140, 0.15);
+      border-radius: 12px;
+      padding: 18px 14px;
+      text-align: center;
+      height: 100%;
+    }
+
+    .service-item i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .stats-grid {
+      margin-top: 28px;
+    }
+
+    .stat-box {
+      background: linear-gradient(135deg, rgba(31, 122, 140, 0.08), rgba(242, 107, 56, 0.08));
+      border: 1px solid rgba(31, 122, 140, 0.12);
+      border-radius: 18px;
+      padding: 26px 18px;
+      text-align: center;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: var(--text-color);
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    .testimonial-card {
+      background: linear-gradient(135deg, rgba(31, 122, 140, 0.08), rgba(31, 122, 140, 0.02));
+      border: 1px solid rgba(31, 122, 140, 0.14);
+      border-radius: 18px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .testimonial-card i {
+      color: var(--accent);
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+    }
+
+    .featured-achievement {
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(31, 122, 140, 0.06), rgba(242, 107, 56, 0.05));
+      border: 1px solid rgba(31, 122, 140, 0.15);
+    }
+
+    .certificate-image {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #fff;
+      border: 2px solid rgba(31, 122, 140, 0.18);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+    }
+
     .card {
       background-color: var(--card-bg);
       color: var(--text-color);
@@ -208,8 +365,15 @@
 
   <!-- Header -->
   <header data-aos="fade-down">
-    <h1>Welcome to Ndenneh Chubu's Portfolio</h1>
-    <p>Backend Engineer at NAFA Financial Services, The Gambia</p>
+    <div class="container">
+      <h1>Ndenneh Chubu</h1>
+      <p>Backend Software Engineer • API Systems • Cloud Solutions</p>
+      <div class="hero-actions">
+        <a href="#projects" class="cta-button primary">View Projects</a>
+        <a href="#contact" class="cta-button secondary">Hire Me</a>
+        <a href="mailto:ndeneh93@gmail.com" class="cta-button secondary">Email Me</a>
+      </div>
+    </div>
   </header>
 
   <!-- Navbar -->
@@ -236,11 +400,112 @@
 
   <!-- About -->
   <section id="about" class="container text-center mt-5" data-aos="fade-up">
-    <img src="The Tech Enthusiast.jpeg" alt="Ndenneh Chubu" class="profile-pic mb-3">
-    <p>I am a Backend Engineer at NAFA Financial Services in The Gambia. I build scalable and secure backend systems
-      using Node.js, TypeScript, GraphQL, Apollo Server, Docker, and AWS. I focus on clean architecture, system
-      optimization, and innovative, data-driven financial services that empower users both nationally and
-      internationally.</p>
+    <div class="about-wrapper">
+      <img src="The Tech Enthusiast.jpeg" alt="Ndenneh Chubu" class="profile-pic mb-3">
+      <h2 class="section-title">About Me</h2>
+      <p>Ndenneh Chubu is a Backend Engineer with a strong focus on building scalable, secure, and high-performing
+        backend systems using Node.js, TypeScript, GraphQL, Apollo Server, Docker, and AWS. He is passionate about
+        clean architecture, system optimization, and creating reliable digital solutions that support financial and
+        technology innovation across local and international communities.</p>
+
+      <div class="intro-badges">
+        <span class="badge-pill"><i class="fa-solid fa-server"></i> Backend Systems</span>
+        <span class="badge-pill"><i class="fa-solid fa-diagram-project"></i> APIs & Architecture</span>
+        <span class="badge-pill"><i class="fa-solid fa-shield-halved"></i> Secure Solutions</span>
+        <span class="badge-pill"><i class="fa-solid fa-cloud"></i> Cloud & DevOps</span>
+      </div>
+
+      <div class="row g-4 stat-grid">
+        <div class="col-md-3">
+          <div class="card feature-card">
+            <i class="fa-solid fa-code"></i>
+            <h5>Backend Development</h5>
+            <p>Robust APIs and services</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card feature-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h5>Performance</h5>
+            <p>Optimized, efficient systems</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card feature-card">
+            <i class="fa-solid fa-lock"></i>
+            <h5>Security</h5>
+            <p>Secure architecture practices</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card feature-card">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h5>Cloud</h5>
+            <p>Docker, AWS, scalable deployment</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-strip">
+        <div class="row g-4 mt-2">
+          <div class="col-md-3">
+            <div class="service-item">
+              <i class="fa-solid fa-server"></i>
+              <h6>API Design</h6>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-item">
+              <i class="fa-solid fa-microchip"></i>
+              <h6>System Architecture</h6>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <h6>Security Engineering</h6>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="service-item">
+              <i class="fa-solid fa-cloud"></i>
+              <h6>Cloud Deployments</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Professional Highlights</h2>
+    <div class="row g-4 stats-grid">
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-target="5">0</div>
+          <div class="stat-label">+ Years Building</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-target="20">0</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-target="8">0</div>
+          <div class="stat-label">Tech Domains</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="stat-box">
+          <div class="stat-number" data-target="100">0</div>
+          <div class="stat-label">% Focused</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Skills -->
@@ -277,7 +542,7 @@
           </div>
         </div>
         <div class="mb-3">
-          <h5>AWS <span class="float-end">70%</span></h5>
+          <h5>Postgres <span class="float-end">70%</span></h5>
           <div class="progress" style="height: 10px;">
             <div class="progress-bar bg-primary" role="progressbar" style="width:0%" aria-valuenow="70"
               aria-valuemin="0" aria-valuemax="100"></div>
@@ -340,6 +605,32 @@
     </div>
   </section>
 
+  <!-- Featured Achievement -->
+  <section class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">Featured Achievement</h2>
+    <div class="card featured-achievement">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <img class="certificate-image"
+            src="file:///C:/Users/MADAM%20CHUBU/AppData/Roaming/Code/agentSessionData/e5f204f4-5c6d-4921-aa16-17f15c0832de/attachments/4b8a57b6-74d9-4b17-bdb9-95cc3efa75d5/Mr.%20Ndenneh%20Chubu.jpg"
+            alt="Certificate of Participation for Mr. Ndenneh Chubu" />
+        </div>
+        <div class="col-lg-6">
+          <span class="badge-pill"><i class="fa-solid fa-medal"></i> Participation Certificate</span>
+          <h3 class="mt-3">World Urban Forum 2026</h3>
+          <p>Recognized for participation in the online Generative AI Upskilling Training sessions and the
+            International Youth AI Competition 2026, focused on resilient, sustainable, and reintegration-friendly
+            cities.</p>
+          <ul class="mb-0 ps-3">
+            <li>Generative AI Upskilling Training (8 hours)</li>
+            <li>International Youth AI Competition 2026</li>
+            <li>Awarded to Mr. Ndenneh Chubu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Certifications -->
   <section id="certifications" class="container mt-5" data-aos="fade-up">
     <h2 class="section-title">Certifications</h2>
@@ -383,7 +674,7 @@
     <div class="timeline-card">
       <span class="timeline-icon"><i class="fa-solid fa-briefcase"></i></span>
       <h5>Backend Engineer | NAFA Financial Services, The Gambia</h5>
-      <small class="text-muted">October 2025 – Present</small>
+      <small class="text-muted">October 6th 2025 - April 2026</small>
       <p>Develop APIs for microservices, ensure clean code and coding standards, and fulfill customer needs
         efficiently.</p>
     </div>
@@ -411,7 +702,8 @@
       <div class="col-md-4">
         <div class="card text-center">
           <h5><i class="fa-solid fa-laptop-code me-2"></i>Portfolio Website</h5>
-          <p>Personal portfolio using HTML, CSS, JavaScript.</p>
+          <p>A personal portfolio built to showcase professional experience, certifications, and software engineering
+            work in a modern and responsive design.</p>
           <div class="project-links mt-2">
             <a href="https://github.com/ndeneh93/portfolio" target="_blank" class="btn btn-outline-primary btn-sm"><i
                 class="fab fa-github me-1"></i> GitHub</a>
@@ -423,7 +715,8 @@
       <div class="col-md-4">
         <div class="card text-center">
           <h5><i class="fa-solid fa-clipboard-question me-2"></i>Quiz Application</h5>
-          <p>Multiple-choice quiz app using JavaScript.</p>
+          <p>An interactive quiz platform focused on user engagement, responsive UI, and engaging multiple-choice
+            assessment flows.</p>
           <div class="project-links mt-2">
             <a href="https://github.com/ndeneh93/quiz-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
                 class="fab fa-github me-1"></i> GitHub</a>
@@ -435,7 +728,8 @@
       <div class="col-md-4">
         <div class="card text-center">
           <h5><i class="fa-solid fa-list-check me-2"></i>To-Do List App</h5>
-          <p>Task management app using JavaScript.</p>
+          <p>A task management application designed to help users organize responsibilities with a clean, practical
+            interface and real-time interaction.</p>
           <div class="project-links mt-2">
             <a href="https://github.com/ndeneh93/todo-app" target="_blank" class="btn btn-outline-primary btn-sm"><i
                 class="fab fa-github me-1"></i> GitHub</a>
@@ -447,22 +741,58 @@
     </div>
   </section>
 
+  <!-- Values -->
+  <section class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">What I Bring</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <i class="fa-solid fa-lightbulb"></i>
+          <h5>Problem Solving</h5>
+          <p>I enjoy turning complex business needs into reliable, scalable backend solutions.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <i class="fa-solid fa-pen-ruler"></i>
+          <h5>Clean Architecture</h5>
+          <p>I design maintainable systems that are easier to extend, debug, and secure over time.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial-card">
+          <i class="fa-solid fa-people-group"></i>
+          <h5>Collaboration</h5>
+          <p>I value communication, team alignment, and delivering practical solutions that move product goals forward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
   <section id="contact" class="container mt-5 text-center" data-aos="fade-up">
     <h2 class="section-title">Contact Me</h2>
-    <form action="https://formspree.io/f/meoaqgag" method="POST" class="mb-4">
-      <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" required></div>
-      <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
-      <div class="mb-3"><textarea class="form-control" name="message" rows="3" placeholder="Message"
-          required></textarea></div>
-      <button type="submit" class="btn btn-primary">Send</button>
-    </form>
-    <p><i class="fa fa-envelope"></i> <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
-    <p><i class="fa fa-phone"></i> <a href="tel:+994507879269">+994 50 787 92 69 | +220 360 9919</a></p>
-    <a href="https://www.linkedin.com/in/ndenneh-chubu/" target="_blank" class="btn btn-primary"><i
-        class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i>
-      GitHub</a>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form action="https://formspree.io/f/meoaqgag" method="POST" class="mb-4">
+          <div class="mb-3"><input type="text" class="form-control" name="name" placeholder="Name" required></div>
+          <div class="mb-3"><input type="email" class="form-control" name="email" placeholder="Email" required></div>
+          <div class="mb-3"><textarea class="form-control" name="message" rows="3" placeholder="Message"
+              required></textarea></div>
+          <button type="submit" class="btn btn-primary px-4">Send Message</button>
+        </form>
+        <p><i class="fa fa-envelope"></i> <a href="mailto:ndeneh93@gmail.com">ndeneh93@gmail.com</a></p>
+        <p><i class="fa fa-phone"></i> <a href="tel:+994507879269">+994 50 787 92 69 | +220 83 360 9919</a></p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
+          <a href="https://www.linkedin.com/in/ndenneh-chubu/" target="_blank" class="btn btn-primary"><i
+              class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/ndeneh93" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i>
+            GitHub</a>
+          <a href="mailto:ndeneh93@gmail.com" class="btn btn-outline-primary"><i class="fa fa-envelope"></i> Email</a>
+          <a href="https://drive.google.com/" target="_blank" class="btn btn-outline-success"><i class="fa-solid fa-download"></i> Resume</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -494,6 +824,7 @@
     // Animate progress bars on scroll
     const progressBars = document.querySelectorAll('.progress-bar');
     const skillsSection = document.getElementById('skills');
+    const counters = document.querySelectorAll('.stat-number');
 
     function animateProgress() {
       progressBars.forEach(bar => {
@@ -502,12 +833,44 @@
       });
     }
 
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = Number(counter.getAttribute('data-target'));
+        let current = 0;
+        const increment = target / 40;
+
+        const updateCounter = () => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target + (target === 100 ? '%' : '');
+            return;
+          }
+          counter.textContent = Math.floor(current) + (target === 100 ? '%' : '');
+          requestAnimationFrame(updateCounter);
+        };
+
+        requestAnimationFrame(updateCounter);
+      });
+    }
+
+    const backToTop = document.querySelector('.back-to-top');
+
     window.addEventListener('scroll', () => {
       const sectionPos = skillsSection.getBoundingClientRect().top;
       const screenPos = window.innerHeight / 1.3;
       if (sectionPos < screenPos) {
         animateProgress();
       }
+
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+
+    window.addEventListener('load', () => {
+      animateCounters();
     });
   </script>
 </body>
